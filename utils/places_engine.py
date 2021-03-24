@@ -5,7 +5,7 @@ import json
 import math
 
 otm_url = 'https://api.opentripmap.com/0.1/en/places'
-otm_api_key = '5ae2e3f221c38a28845f05b6862cadcee936a16d50308813cb45978b'
+otm_api_key = 'xxxxxxxxx'
 
 # kinds such as: 
 '''

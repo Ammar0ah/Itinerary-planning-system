@@ -4,21 +4,11 @@ import requests
 import json
 import math
 
-# headers = {
-#     'x-rapidapi-key': "1efa92d164msh01d90804f3853d5p17d12djsn8d02050ddb80",
-#     'x-rapidapi-host': "hotels4.p.rapidapi.com"
-#     }
-
-# headers = {
-#     'x-rapidapi-key': "c27cdc0b17msha3b9183cfea9f5bp1679a0jsn563637f7c0ff",
-#     'x-rapidapi-host': "hotels4.p.rapidapi.com"
-#     }
-
 
 dojo_url = 'https://hotels4.p.rapidapi.com'
 
 headers = {
-    'x-rapidapi-key': "bc4ee83b66msh64496286c1e7ed7p155ac0jsn0fc9bf530755",
+    'x-rapidapi-key': "xxxxxxxxx",
     'x-rapidapi-host': "hotels4.p.rapidapi.com"
     }
 

@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+reviews_fin.csv
+places_features_dataset.csv
+Hotels_features_dataset.csv
+tripadvisor_hotel_scraped_data.json
+.DS_Store
+
+
+

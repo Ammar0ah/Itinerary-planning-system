@@ -143,6 +143,12 @@ def dining(jsn):
         res.update({json_data[idx]['heading'] : json_data[idx]['freeText']})
     return res
 
+def coordinates(jsn):
+    json_data = json.loads(jsn)['data']['body']['pdpHeader']['hotelLocation']['coordinates']
+    return {'longitude' : json_data['longitude'],
+            'latitude' : json_data['latitude'],
+           }
+
 
 def pets_and_net(jsn):
     try:
@@ -181,6 +187,7 @@ def get_check_in_required(jsn):
 def parse_details(jsn):
     res = split_hotel_overview(jsn)
     res.update(get_description(jsn))
+    res.update(coordinates(jsn))
     res.update(split_rooms_features(jsn))
     res.update(split_features(jsn))
     res.update(hygiene(jsn))

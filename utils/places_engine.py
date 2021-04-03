@@ -5,7 +5,7 @@ import json
 import math
 
 otm_url = 'https://api.opentripmap.com/0.1/en/places'
-otm_api_key = 'xxxxxxxxx'
+otm_api_key = '5ae2e3f221c38a28845f05b6862cadcee936a16d50308813cb45978b'
 
 # kinds such as: 
 '''
@@ -90,14 +90,35 @@ def get_list_of_places(city_name, kind = ''):
     res = get_place_preview(row_data)
     return res
 
-def get_place_features(city_name):
-    data = search_places(city_name)['features']
+
+def get_place_features(city_name, kinds):
+    data = search_places(city_name, kinds)['features']
     res = []
     for item in data:
         res.append({
+            'city' : city_name,
             'id' : item['properties']['xid'],
             'name' : item['properties']['name'],
             'rate' : item['properties']['rate'],
             'kinds' : item['properties']['kinds'],
+            'distance' : item['properties']['dist'],
+            'coordinates' : {item['geometry']['coordinates'][0], item['geometry']['coordinates'][1]}
         })
     return res
+
+# get specific city information like latitude and longitude. 
+def get_closest_places(latitude, longitude, radius, kind = ''):
+    if len(kind):
+        kind = '&kinds={}'.format(kind)
+        
+    url = '{}/radius?radius={}&lon={}&lat={}{}&apikey={}'.format(
+        otm_url,
+        radius,
+        longitude,                                                                                            
+        latitude,                                                                                            
+        kind,                  
+        otm_api_key)
+    
+    response = requests.request("GET", url)
+    
+    return json.loads(response.text)

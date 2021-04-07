@@ -17,8 +17,13 @@ from utils import data_parser as dp
 
 dojo_url = 'https://hotels4.p.rapidapi.com'
 
+# headers = {
+#     'x-rapidapi-key': "bc4ee83b66msh64496286c1e7ed7p155ac0jsn0fc9bf530755",
+#     'x-rapidapi-host': "hotels4.p.rapidapi.com"
+#     }
+
 headers = {
-    'x-rapidapi-key': "bc4ee83b66msh64496286c1e7ed7p155ac0jsn0fc9bf530755",
+    'x-rapidapi-key': "f1025a44cbmshae5cfb6a84ccd5dp1ef9d9jsn0f2cd8f80dcf",
     'x-rapidapi-host': "hotels4.p.rapidapi.com"
     }
 

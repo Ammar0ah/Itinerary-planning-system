@@ -107,7 +107,7 @@ class HotelSearchEngine:
 
         df = self.get_search_results(res)
 
-    #     df = dp.clean_results(df)
+        df = dp.clean_results(df)
 
         jsn = self.get_search_filters(res)
 
@@ -129,7 +129,7 @@ class HotelSearchEngine:
                             "2020-01-01",
                             "2021-01-01", 1,
                             'STAR_RATING_HIGHEST_FIRST' ,
-                            {"guestRatingMin":"8"})
+                            {"guestRatingMin":"8"})['HOTELS']
 
      # find hotel information by using its name. 
     def get_hotel_id_by_name(self, name : str):

@@ -1,5 +1,6 @@
 from utils.hotels_engine import HotelSearchEngine as Hotels
 from utils.places_engine import PlacesSearchEngine as Places
+from trip_classes.Item import Item
 from enum import Enum
 
 class Search_Engine:
@@ -17,15 +18,28 @@ class Search_Engine:
         IMAGES = 3,   #hotel_id 'int'
         REVIEWS = 4,  #hotel_id 'int'
         HOTEL = 5,    #hotel_name 'str'
+        BESTCHOISE = 6, # location 'str
 
     class pse_end_points(Enum):
         DETAILS = 1, #place_id : str
         LOCATION = 2, #place_name & wanted_filters
         LISTVIEW = 3, #place_name & wanted_filters
-        
+        COORDINATES = 4, #lat & lon : str, kind : str 
+        BESTCHOISE = 5, #lat & lon : str, places count : int, kind : str 
+    def collect_trip_components(self, location : str, num_of_days : int):
+        trip_components = []
+        starting_pt = self.hotels.best_hotels_in_country(location) #starting point -> first hotel.
+        fortification = self.places.get_top_rated_places(starting_pt['0']['coordinate']['lat'],
+                                                       starting_pt['0']['coordinate']['lon'],
+                                                       int(num_of_days * 2.6),
+                                                      'fortifications')
+        trip_components.append(Item('hotel', starting_pt['0']))
+        for fortification in fortification:
+            trip_components.append(Item('fortification', fortification))  
+        return trip_components
     def get(self, engine_type, end_point ,query_params):
 
-        def hotel_search_engine_endpoint(end_point, query_params):
+        def hotel_search_engine_endpoints_es(end_point, query_params):
             booking_query_params = [
                 'location',
                 'page_number',
@@ -55,7 +69,12 @@ class Search_Engine:
                     if 'id' in query_params and 'page_number' in query_params:
                         return self.hotels.get_hotel_reviews(query_params['id'], query_params['page_number'])
                     else:
-                        raise ValueError('A very specific bad thing happened.')     
+                        raise ValueError('A very specific bad thing happened.')
+                elif end_point == 'BESTCHOISE':      
+                    if 'location' in query_params:
+                        return self.hotels.best_hotels_in_country(query_params['location'])
+                    else:
+                        raise ValueError('A very specific bad thing happened.')    
                 elif end_point == 'BOOK':      
                     if all(param in query_params for param in booking_query_params):
                         return self.hotels.search_location(query_params['location'],
@@ -68,7 +87,7 @@ class Search_Engine:
                                                      )
                     else:
                         raise ValueError('A very specific bad thing happened.')           
-        def place_search_engine_endpoint(end_point, query_params):
+        def place_search_engine_endpoints_es(end_point, query_params):
             if end_point not in self.pse_end_points.__members__:
                 raise ValueError('Can not Find the Entered Endpoint!, try something else')
             else:    
@@ -93,12 +112,43 @@ class Search_Engine:
                                 return self.places.get_place_features(query_params['name'], '')
                         else:
                             raise ValueError('A very specific bad thing happened.') 
-
+                            
+                elif end_point == 'COORDINATES':           
+                        if 'lat' in query_params and 'lon' in query_params:
+                            if 'filter' in query_params:
+                                return self.places.search_places_by_coords(query_params['lat'],
+                                                                           query_params['lon'],
+                                                                           query_params['filter'])
+                            else:   
+                                return self.places.search_places_by_coords(query_params['lat'],
+                                                                           query_params['lon'],
+                                                                           '')
+                        else:
+                            raise ValueError('There is something wrong with the coordinates!') 
+                elif end_point == 'BESTCHOISE':           
+                        if 'lat' in query_params and 'lon' in query_params and 'count' in query_params:
+                            if 'filter' in query_params:
+                                return self.places.get_top_rated_places(query_params['lat'],
+                                                                        query_params['lon'],
+                                                                        query_params['count'],    
+                                                                        query_params['filter'])
+                            else:   
+                                return self.places.get_top_rated_places(query_params['lat'],
+                                                                        query_params['lon'],
+                                                                        query_params['count'],  
+                                                                           '')
+                        else:
+                            raise ValueError('There is something wrong with the coordinates!')        
+        
+            
         if engine_type == 'HOTELS':
             print('Hotels search engine in use!')
-            return hotel_search_engine_endpoint(end_point, query_params)
+            return hotel_search_engine_endpoints_es(end_point, query_params)
 
         elif engine_type == 'PLACES':
             print('Places search engine in use!')
-            return place_search_engine_endpoint(end_point, query_params)
+            return place_search_engine_endpoints_es(end_point, query_params)
+            
+        else:
+            raise ValueError('Can not Find the Entered Type!, try -> HOTELS or PLACES!') 
 

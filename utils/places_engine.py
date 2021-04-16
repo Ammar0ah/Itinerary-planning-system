@@ -43,7 +43,7 @@ class PlacesSearchEngine:
         if len(kind):
             kind = '&kinds={}'.format(kind)
 
-        url = '{}/radius?radius=1000&lon={}&lat={}{}&apikey={}'.format(
+        url = '{}/radius?radius=200000&lon={}&lat={}{}&apikey={}'.format(
             self.otm_url,
             crds['lon'],                                                                                            
             crds['lat'],                                                                                            
@@ -53,12 +53,42 @@ class PlacesSearchEngine:
         response = requests.request("GET", url)
 
         return json.loads(response.text)
+    
+    # get all available places in location using the coordinates.
+    def search_places_by_coords(self, latitude, longitude, kind =''):    
+        if len(kind):
+            kind = '&kinds={}'.format(kind)
 
+        url = '{}/radius?radius=200000&lon={}&lat={}{}&apikey={}'.format(
+            self.otm_url,
+            longitude,                                                                                            
+            latitude,                                                                                            
+            kind,                  
+            self.otm_api_key)
+
+        response = requests.request("GET", url)
+
+        return json.loads(response.text)
+    
+    def get_top_rated_places(self, latitude, longitude, places_count, kind = ''):
+        res_plcs = self.search_places_by_coords(latitude, longitude, kind)['features']
+        res_plcs = self.clean_results(res_plcs)
+        wanted_items = []
+        for idx, item in enumerate(res_plcs):
+            wanted_items.append((idx, item['guestrating']))
+        wanted_items.sort(key=lambda tup: tup[1],  reverse=True)  # sorts in place
+        
+        fnl_res = []
+        for idx, _ in wanted_items[:places_count]:
+            fnl_res.append(res_plcs[idx])   
+        return fnl_res
     # get all the information about a group of places in a specific location.
     def get_places_info(self, city_name, kind = ''):
         places_ids = self.search_places(city_name, kind)
         lis = []
-        for xid in range(0 , len(places_ids['features'])):
+#         range_ =  len(places_ids['features'])
+        range_ = 3
+        for xid in range(0 , range_):
             det = self.get_object_properties(places_ids['features'][xid]['properties']['xid'])
             lis.append(det)
         return lis
@@ -88,24 +118,27 @@ class PlacesSearchEngine:
 
     def get_list_of_places(self, city_name, kind = ''):
         row_data = self.get_places_info(city_name , kind)
-        res = self.get_place_preview(row_data)
+        res = self.get_place_preview(row_data[:2])
         return res
 
-
-    def get_place_features(self, city_name, kinds):
-        data = self.search_places(city_name, kinds)['features']
+    def clean_results(self, data):
         res = []
         for item in data:
             res.append({
-                'city' : city_name,
                 'id' : item['properties']['xid'],
                 'name' : item['properties']['name'],
-                'rate' : item['properties']['rate'],
+                'guestrating' : item['properties']['rate'],
                 'kinds' : item['properties']['kinds'],
                 'distance' : item['properties']['dist'],
-                'coordinates' : {item['geometry']['coordinates'][0], item['geometry']['coordinates'][1]}
+                'coordinate' : {'lat' : item['geometry']['coordinates'][1],
+                                'lon' : item['geometry']['coordinates'][0]}
             })
         return res
+    
+    def get_place_features(self, city_name, kinds):
+        data = self.search_places(city_name, kinds)['features']
+        res = []
+        return self.clean_results(data)
 
     # get specific city information like latitude and longitude. 
     def get_closest_places(self, latitude, longitude, radius, kind = ''):

@@ -1,0 +1,194 @@
+{
+    "HOTEL_FEATURE": [
+        "72 smoke-free guestrooms",
+        "Daily housekeeping",
+        "Restaurant and bar/lounge",
+        "Breakfast available",
+        "6 meeting rooms",
+        "24-hour front desk",
+        "Air conditioning",
+        "Garden",
+        "Laundry service",
+        "Conference space",
+        "Multilingual staff",
+        "Concierge services",
+        "Free WiFi "
+    ],
+    "LOCATION_SECTION": [
+        "In Williamsburg",
+        "United Nations Headquarters - 3 mi / 4.8 km",
+        "Empire State Building - 3 mi / 4.9 km",
+        "Roosevelt Island - 2.6 mi / 4.2 km",
+        "Brooklyn Bridge Park - 3.7 mi / 6 km",
+        "Washington Square Park - 4 mi / 6.5 km",
+        "New York University - 4.1 mi / 6.6 km",
+        "Union Square Park - 4.3 mi / 6.9 km",
+        "Chrysler Building - 4.3 mi / 6.9 km",
+        "Barclays Center Brooklyn - 4.4 mi / 7 km",
+        "Wall Street - 4.4 mi / 7 km"
+    ],
+    "TAGLINE": [
+        "<b>3.5-star hotel in Williamsburg with restaurant and bar/lounge </b>"
+    ],
+    "HOTEL_FREEBIES": [
+        "Free WiFi"
+    ],
+    "NAME": "Wythe Hotel",
+    "STAR_RATE": 3.5,
+    "PRICE": 240.0,
+    "longitude": -73.957697,
+    "latitude": 40.722088,
+    "ROOMS": [
+        "BROOKLYN KING ROOM",
+        "BROOKLYN QUEEN ROOM",
+        "BUNK BED",
+        "MANHATTAN VIEW KING ROOM",
+        "STUDIO QUEEN ROOM"
+    ],
+    "ROOM_FEATURES": [
+        {
+            "heading": "Home comforts",
+            "listItems": [
+                "Air conditioning",
+                "Minibar",
+                "Bathrobes",
+                "Iron/ironing board"
+            ]
+        },
+        {
+            "heading": "Sleep well",
+            "listItems": [
+                "Blackout drapes/curtains"
+            ]
+        },
+        {
+            "heading": "Things to enjoy",
+            "listItems": [
+                "In-room massage available",
+                "Individually decorated"
+            ]
+        },
+        {
+            "heading": "Freshen up",
+            "listItems": [
+                "Rainfall showerhead",
+                "Shower only",
+                "Free toiletries",
+                "Hair dryer"
+            ]
+        },
+        {
+            "heading": "Be entertained",
+            "listItems": [
+                "40-inch Smart TV",
+                "Premium TV channels",
+                "Smart speaker"
+            ]
+        },
+        {
+            "heading": "Stay connected",
+            "listItems": [
+                "Free newspaper",
+                "Free WiFi",
+                "Free long-distance calls"
+            ]
+        },
+        {
+            "heading": "More",
+            "listItems": [
+                "Daily housekeeping",
+                "In-room safe"
+            ]
+        }
+    ],
+    "HOTEL_FEATURES": [
+        {
+            "heading": "Food and drink",
+            "listItems": [
+                "Continental breakfast daily (surcharge)",
+                "Restaurant",
+                "Bar/lounge"
+            ]
+        },
+        {
+            "heading": "Working away",
+            "listItems": [
+                "Number of meeting rooms -  6",
+                "Conference space",
+                "Conference space size (feet) -  3000",
+                "Conference space size (meters) -  279"
+            ]
+        },
+        {
+            "heading": "Services",
+            "listItems": [
+                "24-hour front desk",
+                "Concierge services",
+                "Dry cleaning/laundry service",
+                "Free newspapers in lobby",
+                "Luggage storage",
+                "Wedding services",
+                "Multilingual staff",
+                "Porter/bellhop"
+            ]
+        },
+        {
+            "heading": "Facilities",
+            "listItems": [
+                "Elevator",
+                "Garden"
+            ]
+        },
+        {
+            "heading": "Accessibility",
+            "listItems": [
+                "Braille or raised signage",
+                "Accessible bathroom",
+                "In-room accessibility",
+                "Roll-in shower",
+                "Wheelchair-accessible path of travel",
+                "Wheelchair-accessible public restroom",
+                "Wheelchair-accessible path to lift",
+                "Wheelchair-accessible registration desk",
+                "Wheelchair-accessible meeting spaces/business center",
+                "Wheelchair-accessible on-site restaurant",
+                "Visual alarms in hallways",
+                "Handrails in hallways",
+                "Handrails in stairways",
+                "Braille signage",
+                "Hand-held showerhead",
+                "Wheelchair-accessible bathroom vanity",
+                "Portable shower seat",
+                "Raised toilet seat",
+                "Height-adjustable showerhead",
+                "Grab bar - near toilet",
+                "Grab bar - in shower",
+                "Roll-in shower",
+                "Visual fire alarm"
+            ]
+        },
+        {
+            "heading": "Languages Spoken",
+            "listItems": [
+                "English"
+            ]
+        }
+    ],
+    "HYGIENE": "COVID-19: Hygiene and cleanliness",
+    "Dining": "<strong>Le Crocodile</strong> - Onsite brasserie. <br/>\n<p></p><strong>Lemon's</strong> - Onsite rooftop bar. Open daily. ",
+    "POLICIES": "<p>This property advises that enhanced cleaning and guest safety measures are currently in place.</p><p>Disinfectant is used to clean the property, and commonly-touched surfaces are cleaned with disinfectant between stays.</p><p>Staff at the property wear personal protective equipment and masks are required in public areas.</p><p>Contactless check-in is available.</p>",
+    "PETS": [
+        "Pets allowed (dogs only)*",
+        "Food and water bowls available"
+    ],
+    "INTERNET": [
+        "Free WiFi in public areas",
+        "Free WiFi in rooms"
+    ],
+    "MAP_URL": "https://maps-api-ssl.google.com/maps/api/staticmap?center=40.722088,-73.957697&format=jpg&sensor=false&key=AIzaSyDaDqDNrxWrxcURixO2l6TbtV68X0Klf4U&zoom=16&size=834x443&scale&signature&signature=6eyqYjrk9-ogCEmqPJkVhk-WLOQ=",
+    "CHECKIN_REQUIRED": [
+        "Credit card, debit card, or cash deposit required for incidental charges",
+        "Government-issued photo ID may be required",
+        "Minimum check-in age is 18"
+    ]
+}

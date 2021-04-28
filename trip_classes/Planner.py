@@ -61,7 +61,7 @@ class Planner:
             for i in range(1, len(path) - 1):
                 cost += self.get_distance(path[i], path[i - 1])
                 total_costs.append((cost, best_route))
-        total_costs = sorted(total_costs, key=lambda x: x[0])
+        total_costs = sorted(total_costs, key=lambda x: x[0],reverse=True)
         self.optimal_cost, self.optimal_route = total_costs[0]
         return self.optimal_route, self.optimal_cost
 

@@ -39,46 +39,66 @@ class Search_Engine:
         extended_trip = 1,
         focused_trip = 2,
 
-        
-    ### need to specify the calculation mechanism of items count per trip.... -> dist
-    def collect_trip_components(self, location : str, num_of_days : int, preferences : list, trip_mode : str):
+   
+    def collect_trip_components(self, location : str, num_of_days : int,
+                                preferences : list, trip_mode : str,
+                                foods : bool, shops : bool):
         if bool(preferences):
             if trip_mode not in self.TirpMode.__members__:
                 raise ValueError('You have entered wrong mode!')
             else:
                 trip_components = []
-                fixed_places = ['fast_food', 'malls', 'marketplaces', 'restaurants', 'cafes'] 
-                
+#                 foods_list = ['fast_food', 'restaurants', 'cafes'] 
+#                 shops_list = ['malls', 'marketplaces', 'outdoor']
                 starting_pt = self.hotels.best_hotels_in_country(location) #starting point -> first hotel.
                 trip_components.append(Item('hotel', starting_pt['0']))
                 
-                dist = 0
-                suspicion = 0.2
+                
+                shops_count = 0
+                foods_count = 0
+                other_places_count = 0
+                
                 if trip_mode == 'focused_trip':
-                    dist = num_of_days + 0.5
-                    
+                    other_places_count = 2
+                    if foods:
+                        foods_count = 2
+                        if shops:
+                            shops_count = 1
+                            
                 elif trip_mode == 'extended_trip':
-                    dist = num_of_days * 1.5
-                    
-                for kind in fixed_places:
-                    suspicion = suspicion * -1.1
-                    dist = dist + suspicion
-                    print('collecting', kind, '...')
+                    if foods:
+                        foods_count = 3
+                        if shops:
+                            other_places_count = 4
+                            shops_count = 2
+                        else:
+                            other_places_count = 5
+                    else:
+                         other_places_count = 8
+                            
+                if foods:
+                    print('collecting foods..')
                     places = self.places.get_top_rated_places(starting_pt['0']['coordinate']['lat'],
                                                                starting_pt['0']['coordinate']['lon'],
-                                                               round(dist),
-                                                               kind)
-
-                    for place in places:
-                        trip_components.append(Item(kind, place))
-                   
+                                                               foods_count *num_of_days,
+                                                               'foods')
+                for place in places:
+                        trip_components.append(Item('food', place))    
+                if shops: 
+                    print('collecting shops..')
+                    places = self.places.get_top_rated_places(starting_pt['0']['coordinate']['lat'],
+                                                               starting_pt['0']['coordinate']['lon'],
+                                                               shops_count *num_of_days,
+                                                               'shops')  
+                for place in places:
+                        trip_components.append(Item('shop', place))
+                        
+                print('collecting user preferences..')
                 for kind in preferences:
-                    suspicion = suspicion * -1.1
-                    dist = dist + suspicion
-                    print('collecting', str(self.OptionalPlacesKinds[kind].value[0]), '...')
+                    print('collecting the', str(self.OptionalPlacesKinds[kind].value[0]), 'places...')
                     places = self.places.get_top_rated_places(starting_pt['0']['coordinate']['lat'],
                                                                starting_pt['0']['coordinate']['lon'],
-                                                               round(dist),
+                                                               int((other_places_count * num_of_days)/3),
                                                                self.OptionalPlacesKinds[kind].value[0])
 
                     for place in places:
@@ -100,33 +120,33 @@ class Search_Engine:
                 'check_out_date',
             ]
             if end_point not in self.HSE_EndPoints.__members__:
-                raise ValueError('fuck A very specific bad thing happened.')
+                raise ValueError('Can not Find the Entered Endpoint!, try something else')
             else:    
                 if end_point == 'DETAILS':
                     if 'id' in query_params:
                         return self.hotels.hotel_details(query_params['id'])
                     else:
-                        raise ValueError('A very specific bad thing happened.')
+                        raise ValueError('There is something missed in the query_params!')
                 elif end_point == 'IMAGES':      
                     if 'id' in query_params:
                         return self.hotels.get_hotel_imgs(query_params['id'])
                     else:
-                        raise ValueError('A very specific bad thing happened.')
+                        raise ValueError('There is something missed in the query_params!')
                 elif end_point == 'FINDHOTEL':      
                     if 'name' in query_params:
                         return self.hotels.get_hotel_details_by_name(query_params['name'])
                     else:
-                        raise ValueError('A very specific bad thing happened.')       
+                        raise ValueError('There is something missed in the query_params!')       
                 elif end_point == 'REVIEWS':      
                     if 'id' in query_params and 'page_number' in query_params:
                         return self.hotels.get_hotel_reviews(query_params['id'], query_params['page_number'])
                     else:
-                        raise ValueError('A very specific bad thing happened.')
+                        raise ValueError('There is something missed in the query_params!')
                 elif end_point == 'BESTCHOISE':      
                     if 'location' in query_params:
                         return self.hotels.best_hotels_in_country(query_params['location'])
                     else:
-                        raise ValueError('A very specific bad thing happened.')    
+                        raise ValueError('There is something missed in the query_params!')    
                 elif end_point == 'BOOK':      
                     if all(param in query_params for param in booking_query_params):
                         return self.hotels.search_location(query_params['location'],
@@ -138,7 +158,7 @@ class Search_Engine:
                                                       filters = query_params['filters'] if 'filters' in query_params else {}
                                                      )
                     else:
-                        raise ValueError('A very specific bad thing happened.')           
+                        raise ValueError('There is something missed in the query_params!')           
         def place_search_engine_endpoints_es(end_point, query_params):
             if end_point not in self.PSE_EndPoints.__members__:
                 raise ValueError('Can not Find the Entered Endpoint!, try something else')
@@ -147,7 +167,7 @@ class Search_Engine:
                     if 'id' in query_params:
                         return self.places.get_object_properties(query_params['id'])
                     else:
-                        raise ValueError('A very specific bad thing happened.')
+                        raise ValueError('There is something missed in the query_params!')
                 elif end_point == 'LISTVIEW':      
                         if 'name' in query_params:
                             if 'filter' in query_params:
@@ -155,7 +175,7 @@ class Search_Engine:
                             else:    
                                 return self.places.get_list_of_places(query_params['name'], '')
                         else:
-                            raise ValueError('A very specific bad thing happened.') 
+                            raise ValueError('There is something missed in the query_params!') 
                 elif end_point == 'LOCATION':      
                         if 'name' in query_params:
                             if 'filter' in query_params:

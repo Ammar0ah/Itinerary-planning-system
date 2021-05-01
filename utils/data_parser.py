@@ -116,8 +116,12 @@ def split_rooms_features(jsn):
 
 def split_features(jsn):
     try:
+        room_features = []
         json_data = json.loads(jsn)['data']['body']['amenities']
-        return{'ROOM_FEATURES' : json_data[1]['listItems'],
+        for item in json_data[1]['listItems']:
+            for ele in item['listItems']:
+                room_features.append(ele)
+        return{'ROOM_FEATURES' : room_features,
                'HOTEL_FEATURES' : json_data[0]['listItems']}
     except: 
         return {}

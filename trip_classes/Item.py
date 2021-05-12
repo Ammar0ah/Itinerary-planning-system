@@ -8,3 +8,4 @@ class Item:
     def __repr__(self):
         return '- Type: %s, ID: %s, Rate: %s, Coordinates: %s' % (
             self.item_type, self.item_id, self.rate, self.coordinate)
+        # return self.item_type

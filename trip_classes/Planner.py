@@ -90,24 +90,6 @@ class Planner:
         self.optimal_cost, self.optimal_route = total_costs[0]
         return self.optimal_route, self.optimal_cost, path
 
-    def get_region_boundary(self, item):
-        R = 6378.1  # Radius of the Earth
-        brng = 1.57  # Bearing is 90 degrees converted to radians.
-        d = 50  # Distance in km
-        lat1, lon1 = math.radians(item.coordinate['lat']), math.radians(item.coordinate['lon'])
-        # lat1 = math.radians(52.20472)  # Current lat point converted to radians
-        # lon1 = math.radians(0.14056)  # Current long point converted to radians
-
-        lat2 = math.asin(math.sin(lat1) * math.cos(d / R) +
-                         math.cos(lat1) * math.sin(d / R) * math.cos(brng))
-
-        lon2 = lon1 + math.atan2(math.sin(brng) * math.sin(d / R) * math.cos(lat1),
-                                 math.cos(d / R) - math.sin(lat1) * math.sin(lat2))
-
-        lat2 = floor(math.degrees(lat2) * 1000) / 1000
-        lon2 = floor(math.degrees(lon2) * 1000) / 1000
-        return lat2, lon2
-
 
 def get_sublists(original_list, number_of_sub_list_wanted):
     sublists = list()
@@ -131,7 +113,7 @@ if __name__ == '__main__':
         for p in path:
             if p in cpath:
                 dist = get_distance(src, p)
-                if dist < 50:
+                if dist < 100:
                     range.append((p, dist))
                     cpath.remove(p)
         sub_region.append(range)
@@ -148,3 +130,12 @@ if __name__ == '__main__':
         else:
             days.append(Day(len(days), sub))
     ic(days)
+
+x_axes = [item.coordinate['lat'] for item in items]
+y_axes = [item.coordinate['lon'] for item in items]
+plt.plot(x_axes, y_axes,'o--')
+
+plt.plot(x_axes[0], y_axes[0], 'go--', linewidth=2, markersize=12, color="r")
+plt.plot(x_axes[-1], y_axes[-1], 'go--', linewidth=2,linestyle="dashed", markersize=12, color='r')
+
+plt.show()

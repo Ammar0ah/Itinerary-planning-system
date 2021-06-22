@@ -16,7 +16,7 @@ from collections import Counter
 
 from queue import PriorityQueue
 from Day import Day
-from search_engine.trip_planner.trip_classes.Day import Day
+
 
 from Planner import Planner, get_distance
 

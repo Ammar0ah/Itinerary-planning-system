@@ -6,6 +6,6 @@ class Item:
         self.rate = jsn['guestrating']
 
     def __repr__(self):
-        return '- Type: %s, ID: %s, Rate: %s, Coordinates: %s' % (
-            self.item_type, self.item_id, self.rate, self.coordinate)
-        # return self.item_type
+        # return '- Type: %s, ID: %s, Rate: %s, Coordinates: %s' % (
+        #     self.item_type, self.item_id, self.rate, self.coordinate)
+        return self.item_type

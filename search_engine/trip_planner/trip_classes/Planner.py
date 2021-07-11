@@ -1,12 +1,11 @@
+from copy import deepcopy
 from typing import List
-
-from numpy.matlib import rand
-
+# import gmplot
 from Item import Item
 import pickle
 from icecream import ic
 import random
-
+# import geopandas
 from math import floor
 from haversine import haversine
 import numpy as np
@@ -14,14 +13,17 @@ import numpy as np
 from matplotlib import pyplot as plt
 import math
 # import networkx as nx
+from collections import Counter
 
 from queue import PriorityQueue
 from Day import Day
 
-with open('../../../testing/samples/istanbul_dubai_madrid_trip_data.pkl', 'rb') as input:
-    m_trip = pickle.load(input)
+API_KEY = 'AIzaSyCNvDXCZJSLvw9618045G3856O8x5EqeKw'
 
-items = list(m_trip)
+# with open('../../../testing/samples/milan_trip_data.pkl', 'rb') as input:
+#     m_trip = pickle.load(input)
+#
+# items = list(m_trip)[:15]
 cities_names = []
 
 
@@ -36,32 +38,40 @@ def get_distance(item1: Item, item2: Item):
 class Planner:
     optimal_route = []
     optimal_cost = 0
-    constraints = {
-        'malls': 1,
-        'restaurants': 2,
-        'cafes': 3,
-        'fast_food': 4,
-        'architecture': 5,
-        'cultural': 6,
-        'sport': 7,
-        'natural': 8,
-        'marketplaces': 9,
-        'hotel': 1000
-    }
 
     def __init__(self, items: List):
+        self.types = [item.item_type for item in items]
+
+        self.food_types = ['restaurants', 'fast_food', 'food']
+        self.poi_types = ['cultural', 'architecture', 'historic', 'religion']
+        self.market_types = ['malls', 'cafes', 'marketplaces', 'shop']
+        self.entertainment_types = ['sport', 'natural']
+        self.orders = [0, random.choice(self.food_types), random.choice(self.poi_types)]
+
+        self.restaurants = [item for item in items if item.item_type in self.food_types]
+
+        self.items = [item for item in items if item.item_type not in self.food_types]
+        self.breaks = 3
         self.graph = []
-        # self.G = nx.Graph()
-        # self.P = nx.Graph()
-        for i in range(len(items)):
-            cities_names.append(f"{items[i].item_id}, Type:{items[i].item_type}")
+        self.days = []
+        self.path = []
+        for i in range(len(self.items)):
+            cities_names.append(f"{self.items[i].item_id}, Type:{self.items[i].item_type}")
             self.graph.append([])
-            for j in range(len(items)):
-                self.graph[i].append(floor(get_distance(items[i], items[j]) * 1000) / 1000)
+            for j in range(len(self.items)):
+                self.graph[i].append(floor(get_distance(self.items[i], self.items[j]) * 1000) / 1000)
+
+    def get_constraint(self, current):
+        categories = [self.food_types, self.poi_types, self.market_types, self.entertainment_types]
+        for type_cat in categories:
+            if current in type_cat:
+                next_items = [j for j in categories if j == type_cat]
+                return next_items[0]  # list in first index
 
     def delta(self, n1, n2, n3, n4):
         return self.graph[n1][n3] + self.graph[n2][n4] - self.graph[n1][n2] - self.graph[n3][n4]
 
+    # plan optimal path on distance
     def plan_two_opt(self, iterations=5):
         i = 0
         total_costs = []
@@ -81,8 +91,8 @@ class Planner:
                         if self.delta(best_route[i - 1], best_route[i], best_route[j - 1], best_route[j]) < 0:
                             best_route[i:j] = best_route[j - 1:i - 1:-1]
                             improved = True
-            path = [items[i] for i in best_route]
-            # [self.G.add_edge(items[i - 1], items[i]) for i in best_route]
+            path = [self.items[i] for i in best_route]
+
             cost = 0
             for i in range(1, len(path) - 1):
                 cost += get_distance(path[i], path[i - 1])
@@ -90,63 +100,83 @@ class Planner:
                 total_costs.append((cost, best_route))
         total_costs = sorted(total_costs, key=lambda x: x[0])
         self.optimal_cost, self.optimal_route = total_costs[0]
-        return self.optimal_route, self.optimal_cost, path
+        self.path = path
+        return self.optimal_route, self.optimal_cost, self.path
 
-    def get_region_boundary(self, item):
-        R = 6378.1  # Radius of the Earth
-        brng = 1.57  # Bearing is 90 degrees converted to radians.
-        d = 50  # Distance in km
-        lat1, lon1 = math.radians(item.coordinate['lat']), math.radians(item.coordinate['lon'])
-        # lat1 = math.radians(52.20472)  # Current lat point converted to radians
-        # lon1 = math.radians(0.14056)  # Current long point converted to radians
+    def split_trip_on_days(self, path):
+        p_range = []
+        sub_region = []
+        cpath = path.copy()
 
-        lat2 = math.asin(math.sin(lat1) * math.cos(d / R) +
-                         math.cos(lat1) * math.sin(d / R) * math.cos(brng))
+        orders = [['hotel'], self.food_types, random.choice(self.poi_types), random.choice(self.food_types),
+                  random.choice(self.market_types)]
+        type_index = 0
+        while cpath:
+            src = cpath[0]
+            order = orders[type_index]
+            for p in path:
+                if p in cpath:
+                    dist = get_distance(src, p)
+                    if dist < 50:
+                        p_range.append(p)
+                        cpath.remove(p)
+                    else:
+                        if len(orders) > type_index + 1:
+                            type_index += 1
+            sub_region.append(p_range)
+            p_range = []
+        days = []
+        for sub in sub_region:
+            a = []
+            if len(sub) > 4:
+                for s in sub:
+                    a.append(s)
+                    if len(a) >= 5:
+                        days.append(Day(len(days), a))
+                        a = []
+            else:
+                days.append(Day(len(days), sub))
+        self.days = days
+        return days
 
-        lon2 = lon1 + math.atan2(math.sin(brng) * math.sin(d / R) * math.cos(lat1),
-                                 math.cos(d / R) - math.sin(lat1) * math.sin(lat2))
+    # try to remove duplicates and put restaurants breaks
+    def plan_itinerary(self):
+        i = 0
 
-        lat2 = floor(math.degrees(lat2) * 1000) / 1000
-        lon2 = floor(math.degrees(lon2) * 1000) / 1000
-        return lat2, lon2
+        for i in range(200):
+            i += 1
+            copy_path = deepcopy(self.path)
+            for i in range(1, len(copy_path)):
+                if copy_path[i].item_type == copy_path[i - 1].item_type:
+                    same_type = self.get_constraint(copy_path[i].item_type)
 
+                    distances = []
+                    indexes = []
+                    for j in range(0, len(copy_path)):
+                        if i != j and copy_path[j].item_type not in same_type:
+                            indexes.append(j)
+                            distances.append(get_distance(copy_path[i], copy_path[j]))
+                    index = distances.index(min(distances))
+                    index = indexes[index]
+                    self.path[i], self.path[index] = self.path[index], self.path[i]
 
-def get_sublists(original_list, number_of_sub_list_wanted):
-    sublists = list()
-    for sub_list_count in range(number_of_sub_list_wanted):
-        sublists.append(original_list[sub_list_count::number_of_sub_list_wanted])
-    return sublists
+        self.days = self.split_trip_on_days(self.path)
+        for i, day in enumerate(self.days):
+            days_items = day.items
+            food_count = 0
+            for k, item in enumerate(days_items):
+                if 'hotel' == item.item_type and k != 0:
+                    day.swap_items(0, k)
 
-
-if __name__ == '__main__':
-    planner = Planner(items)
-    optimal_route, optimal_cost, path = planner.plan_two_opt(iterations=1)
-    ic(optimal_cost)
-
-    # nx.draw(planner.G, node_color=['red'] * (len(path)), with_labels=True)
-    # plt.show()
-    range = []
-    sub_region = []
-    cpath = path.copy()
-    while cpath:
-        src = cpath[0]
-        for p in path:
-            if p in cpath:
-                dist = get_distance(src, p)
-                if dist < 50:
-                    range.append((p, dist))
-                    cpath.remove(p)
-        sub_region.append(range)
-        range = []
-    days = []
-    for sub in sub_region:
-        a = []
-        if len(sub) > 4:
-            for s in sub:
-                a.append(s)
-                if len(a) >= 5:
-                    days.append(Day(len(days), a))
-                    a = []
-        else:
-            days.append(Day(len(days), sub))
-    ic(days)
+                if k % 2 and k != 0 and self.restaurants:
+                    food_count += 1
+                    if food_count > self.breaks:
+                        food_count = 0
+                        continue
+                    distances = []
+                    for rest in self.restaurants:
+                        distances.append(get_distance(item, rest))
+                    index = distances.index(min(distances))
+                    day.insert_item(self.restaurants[index], k)
+                    self.restaurants = [self.restaurants[l] for l in range(len(self.restaurants)) if l != index]
+        return self.days

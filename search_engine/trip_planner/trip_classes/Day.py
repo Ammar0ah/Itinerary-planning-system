@@ -25,5 +25,4 @@ class Day:
         self.idx = idx
 
     def __repr__(self):
-        # return '- day%s:%s' % (self.idx, '\n'.join(str(self.items).split('- ')))
-        return str(self.items)
+        return '- day%s:%s' % (self.idx, '\n'.join(str(self.items).split('- ')))

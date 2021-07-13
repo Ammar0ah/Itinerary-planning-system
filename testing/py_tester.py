@@ -4,11 +4,12 @@ from search_engine.search_engine import SearchEngine
 
 search_engine = SearchEngine()
 
-trip = search_engine.collect_trip_components(['istanbul', 'dubai', 'madrid'], 8, ['REL', 'HIS', 'ARC'], 'focused_trip',
+trip = search_engine.collect_trip_components(['istanbul', 'riyadh', 'dubai'], 8, ['REL', 'HIS', 'ARC'], 'focused_trip',
                                              False, False)
-
-with open('samples/istanbul_dubai_madrid_trip_data.pkl', 'wb') as output:
-    pickle.dump(list(trip), output, pickle.HIGHEST_PROTOCOL)
+print(trip)
+#
+# with open('samples/istanbul_dubai_madrid_trip_data.pkl', 'wb') as output:
+#     pickle.dump(list(trip), output, pickle.HIGHEST_PROTOCOL)
 
 # trip = search_engine.collect_trip_components(['milan'], 3, ['HIS', 'CUL', ], 'extended_trip', False, True)
 #

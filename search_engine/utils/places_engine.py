@@ -6,7 +6,7 @@ import math
 class PlacesSearchEngine:
     def __init__(self):
         self.otm_url = 'https://api.opentripmap.com/0.1/en/places'
-        self.otm_api_key = '5ae2e3f221c38a28845f05b6862cadcee936a16d50308813cb45978b'
+        self.otm_api_key = '5ae2e3f221c38a28845f05b691930798276c27d339e57d1cff6bddae'
 
     # kinds such as: 
     '''

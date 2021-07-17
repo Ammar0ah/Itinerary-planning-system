@@ -17,7 +17,6 @@ from collections import Counter
 from queue import PriorityQueue
 from Day import Day
 
-
 from Planner import Planner, get_distance
 
 axis = [[32.745255, -74.034775], [34.155834, -119.202789], [42.933334, -100.566666], [42.095554, -79.238609],
@@ -27,7 +26,9 @@ with open('../../../testing/samples/istanbul_trip_data.pkl', 'rb') as input:
     m_trip = pickle.load(input)
 
 items = list(m_trip)
-print(items)
+
+
+
 # print(len(items))
 
 def plot_path(path):
@@ -45,17 +46,19 @@ def plot_path(path):
         plt.annotate(str(i) + path[i].item_type, (x_axes[i], y_axes[i]))
     plt.show()
 
+
 if __name__ == '__main__':
     planner = Planner(items)
     optimal_route, optimal_cost, path = planner.plan_two_opt(iterations=1)
-    print(path)
+    ic(path)
 
     full_plan = planner.plan_itinerary()
-    path_full =[]
+    path_full = []
     for d in full_plan:
         for t in d.items:
             path_full.append(t)
+    ic(full_plan)
+    # ic(len(path_full))
+
     ic(path_full)
-
-
     plot_path(path_full)

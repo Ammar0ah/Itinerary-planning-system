@@ -55,7 +55,7 @@ class SearchEngine:
             if trip_mode not in self.TripMode.__members__:
                 raise ValueError('You have entered wrong mode!')
             else:
-                trip_components = []
+                trip_data= {}
 
                 print('start collecting trip data..')
 
@@ -63,6 +63,7 @@ class SearchEngine:
                 print(preferences)
 
                 for location in locations:
+                    trip_components = []
                     shops_count = round((shop_importance * days_count) / len(locations))
                     foods_count = round((food_importance * days_count) / len(locations))
 
@@ -98,7 +99,8 @@ class SearchEngine:
 
                         for place in places:
                             trip_components.append(Item(str(self.OptionalPlacesKinds[place_type].value[0]), place))
-            return trip_components
+                        trip_data[location] = trip_components
+            return trip_data
         else:
             raise ValueError('cannot collect trip components without specifying kinds!')
 

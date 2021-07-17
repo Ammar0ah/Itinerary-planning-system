@@ -7,7 +7,7 @@ search_engine = SearchEngine()
 Build Trips
 '''
 # consts = {
-#         'locations': ['istanbul', 'dubai'],  # 1
+#         'locations': ['dubai', 'istanbul'],  # 1
 #         'trip_mode': 'extended_trip',  # 2
 #         'food_importance': 3,  # 3
 #         'shop_importance': 1,  # 4
@@ -31,17 +31,22 @@ Search Engine Queries
 booking_dict = {
     'location' : 'new yourk',
     'page_number' : 1,
-    'check_in_date' : "2021-07-16",
-    'check_out_date' : "2021-07-20",
+    'check_in_date' : "2021-07-22",
+    'check_out_date' : "2021-07-27",
     'adults' : 1,
     'sort_order' : 'GUEST_RATING'
 }
+
+# res1 = search_engine.get('HOTELS', 'BOOK',booking_dict)
+# print(res1)
+
 # booking_dict = {
 #     'id' : 487455
 # }
-res1 = search_engine.get('HOTELS', 'BOOK',booking_dict)
-print(res1)
-
-# res6 = search_engine.get('PLACES', 'LOCATION', {'name': 'london'})
-# print(res6[1])
+# #
+# res1 = search_engine.get('HOTELS', 'DETAILS',booking_dict)
+# print(res1)
+#
+res6 = search_engine.get('PLACES', 'LOCATION', {'name': 'england'})
+print(res6)
 

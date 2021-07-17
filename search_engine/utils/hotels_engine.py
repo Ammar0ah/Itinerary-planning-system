@@ -78,17 +78,35 @@ class HotelSearchEngine:
     def get_search_results(self, jsn):
         return pd.DataFrame.from_dict(json.loads(jsn.text)['data']['body']['searchResults']['results'])
 
-
-
     def _clean_filters(self, json):
-        return {
-            'landmarks': json['landmarks']['items'][:10],
-            'neighbourhood': json['neighbourhood']['items'][:10],
-            'accommodationType': json['accommodationType']['items'][:10],
-            'facilities': json['facilities']['items'][:10],
-            'accessibility': json['accessibility']['items'][:10],
-            'paymentPreference': json['paymentPreference']['items'][:10],
-        }
+        result = {}
+        try:
+            result['landmarks'] = json['landmarks']['items'][:10]
+        except:
+            pass
+        try:
+            result['neighbourhood'] = json['neighbourhood']['items'][:10]
+        except:
+            pass
+        try:
+            result['accommodationType'] = json['accommodationType']['items'][:10]
+        except:
+            pass
+        try:
+            result['facilities'] = json['facilities']['items'][:10]
+        except:
+            pass
+        try:
+            result['accessibility'] = json['accessibility']['items'][:10]
+        except:
+            pass
+        try:
+            result['paymentPreference'] = json['paymentPreference']['items'][:10]
+        except:
+            pass
+
+        return result
+
     # get a list of filters from unparsed json file
     def get_search_filters(self, jsn):
         return self._clean_filters(json.loads(jsn.text)['data']['body']['filters'])

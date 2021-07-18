@@ -1,6 +1,5 @@
 from typing import List
 
-from Item import Item
 import pickle
 from icecream import ic
 import random
@@ -15,21 +14,19 @@ import math
 from collections import Counter
 
 from queue import PriorityQueue
-from Day import Day
-
-from Planner import Planner, get_distance
+from search_engine.trip_planner.trip_classes.Trip import Trip
+from trip_planning.Planner import Planner, get_distance
 
 axis = [[32.745255, -74.034775], [34.155834, -119.202789], [42.933334, -100.566666], [42.095554, -79.238609],
         [38.846668, -71.948059], [36.392502, -81.534447], [32.745255, -74.034775]]
 
-with open('../../../testing/samples/istanbul_trip_data.pkl', 'rb') as input:
+with open('../testing/samples/berlin_london_trip_data.pkl', 'rb') as input:
     m_trip = pickle.load(input)
 
-items = list(m_trip)
+items = m_trip
 
 
-
-# print(len(items))
+# ic(items)
 
 def plot_path(path):
     x_axes = [item.coordinate['lat'] for item in path]
@@ -47,18 +44,21 @@ def plot_path(path):
     plt.show()
 
 
+def plan_itinerary_schedule(items_dict: dict, places_per_day, food_count, is_shopping_last):
+    trip = Trip(days=[])
+    if places_per_day > food_count:
+        for key, value in items_dict.items():
+            planner = Planner(value, shopping_last=is_shopping_last)
+            optimal_route, optimal_cost, path = planner.plan_two_opt(iterations=5)
+
+            full_plan_city = planner.plan_itinerary(places_per_day, food_count)
+            trip.add_bulk_days(full_plan_city)
+    else:
+        raise ValueError('Need Poi to be more than Food')
+    return trip
+
+
 if __name__ == '__main__':
-    planner = Planner(items)
-    optimal_route, optimal_cost, path = planner.plan_two_opt(iterations=1)
-    ic(path)
-
-    full_plan = planner.plan_itinerary()
-    path_full = []
-    for d in full_plan:
-        for t in d.items:
-            path_full.append(t)
-    ic(full_plan)
-    # ic(len(path_full))
-
-    ic(path_full)
-    plot_path(path_full)
+    print(items)
+    full_itinerary = plan_itinerary_schedule(items, places_per_day=3, food_count=2, is_shopping_last=False)
+    ic(full_itinerary.toJSON())

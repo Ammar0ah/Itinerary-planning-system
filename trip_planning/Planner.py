@@ -1,7 +1,7 @@
 from copy import deepcopy
 from typing import List
 # import gmplot
-from Item import Item
+from search_engine.trip_planner.trip_classes.Item import Item
 import pickle
 from icecream import ic
 import random
@@ -15,18 +15,11 @@ import math
 # import networkx as nx
 from collections import Counter
 
-from queue import PriorityQueue
-from Day import Day
+from search_engine.trip_planner.trip_classes.Day import Day
+import json
+import requests
 
 API_KEY = '5b3ce3597851110001cf624859a9e4cf86a3409abd7387ad2d5cac7a'
-import json
-
-# with open('../../../testing/samples/milan_trip_data.pkl', 'rb') as input:
-#     m_trip = pickle.load(input)
-#
-# items = list(m_trip)[:15]
-cities_names = []
-import requests
 
 
 def get_distance(item1: Item, item2: Item):
@@ -41,31 +34,36 @@ class Planner:
     optimal_route = []
     optimal_cost = 0
 
-    def __init__(self, items: List):
+    def __init__(self, items: List, shopping_last=False):
+        self.is_shopping_last = shopping_last
         self.types = [item.item_type for item in items]
         self.coordinates = []
+
         self.food_types = ['restaurants', 'fast_food', 'food']
-        self.poi_types = ['cultural', 'architecture', 'historic', 'religion']
-        self.market_types = ['malls', 'cafes', 'marketplaces', 'shop']
+        self.market_types = ['shop']
         self.entertainment_types = ['sport', 'natural']
-        self.orders = [0, random.choice(self.food_types), random.choice(self.poi_types)]
+
         self.url = 'https://api.openrouteservice.org/v2/matrix/driving-car'
         self.restaurants = [item for item in items if item.item_type in self.food_types]
-        # self.restaurants = []
-        self.items = [item for item in items if item.item_type not in self.food_types]
-        # self.items = items
-        self.breaks = 3
+        # shopping
+        self.market_items = []
+
+        if shopping_last:
+            self.items = [item for item in items if item.item_type not in self.food_types + self.market_items]
+
+            self.market_items = [item for item in items if item.item_type in self.market_types]
+
+        else:
+            self.items = [item for item in items if item.item_type not in self.food_types]
+
         self.graph = []
         self.days = []
         self.path = []
         for i in range(len(self.items)):
-            cities_names.append(f"{self.items[i].item_id}, Type:{self.items[i].item_type}")
             self.coordinates.append([self.items[i].coordinate['lon'], self.items[i].coordinate['lat']])
-            # self.graph.append([])
-            # for j in range(len(self.items)):
-            #     self.graph[i].append(floor(get_distance(self.items[i], self.items[j]) * 1000) / 1000)
         self.get_distance_matrix()
 
+    # get real world route distances
     def get_distance_matrix(self):
         body = {'locations': self.coordinates, 'metrics': ['distance'], 'units': 'km'}
         header = {'Authorization': API_KEY}
@@ -79,14 +77,6 @@ class Planner:
     def get_distance_two_cities(self, city_i, city_j):
         return self.graph[self.optimal_route[city_i]][self.optimal_route[city_j]]
 
-    # scheduling items in day
-    def get_constraint(self, current):
-        categories = [self.food_types, self.poi_types, self.market_types, self.entertainment_types]
-        for type_cat in categories:
-            if current in type_cat:
-                next_items = [j for j in categories if j == type_cat]
-                return next_items[0]  # list in first index
-
     # 2-opt
 
     def cost(self, route):
@@ -96,10 +86,9 @@ class Planner:
     # plan optimal path on distance
     def plan_two_opt(self, iterations=5):
         i = 0
-        total_costs = []
         while i < iterations:
             i += 1
-            initial_route = [0] + random.sample(range(1, len(cities_names)), len(cities_names) - 1)
+            initial_route = [0] + random.sample(range(1, len(self.graph)), len(self.graph) - 1)
 
             best_route = initial_route
             improved = True
@@ -124,38 +113,51 @@ class Planner:
                     self.optimal_cost += self.get_distance_two_cities(best_route[i], best_route[j])
         return self.optimal_route, self.optimal_cost, self.path
 
-    def split_trip_on_days(self, path):
+    # make schedule
+    def split_trip_on_days(self, path, poi_per_day):
         places = []
+
         for i, place in enumerate(path):
             places.append(place)
-            if len(places) > 5:
-                self.days.append(Day(i // 5, places))
+            if len(places) >= poi_per_day:
+                self.days.append(Day(i // poi_per_day, deepcopy(places)))
                 places = []
-
+        # for items less than 5
+        if places:
+            self.days.append(Day(len(self.days), places))
         return self.days
 
-    # try to remove duplicates and put restaurants breaks
-    def plan_itinerary(self):
-        self.days = self.split_trip_on_days(self.path)
+    # insert restaurant in the day at index
+    def insert_restaurant(self, poi, idx, day):
+        distances = []
+        if self.restaurants:
+            for rest in self.restaurants:
+                distances.append(get_distance(poi, rest))
+            index = distances.index(min(distances))
+            day.insert_item(self.restaurants[index], idx)
+            self.restaurants = [self.restaurants[l] for l in range(len(self.restaurants)) if l != index]
 
-        while self.restaurants:
-            for i, day in enumerate(self.days):
+    # try to remove duplicates and put restaurants breaks,shopping
+    def plan_itinerary(self, places_per_day=5, food_count=3):
+        self.days = self.split_trip_on_days(self.path, places_per_day - food_count)
 
-                days_items = day.items
-                food_count = 0
-                for k, item in enumerate(days_items):
-                    if 'hotel' == item.item_type and k != 0:
-                        day.swap_items(0, k)
+        for i, day in enumerate(self.days):
+            days_items = day.items
+            for k in range(0, len(days_items)):
+                if 'hotel' == days_items[k] and k != 0:
+                    day.swap_items(0, k)
+            # inserting restaurants
+            if food_count == 1:
+                self.insert_restaurant(days_items[0], 0, day)
+            elif food_count == 2:
+                self.insert_restaurant(days_items[0], 0, day)
+                self.insert_restaurant(days_items[-1], len(days_items), day)
+            else:
+                self.insert_restaurant(days_items[0], 0, day)
+                self.insert_restaurant(days_items[len(days_items) // 2], (len(days_items) // 2) + 1, day)
+                self.insert_restaurant(days_items[-1], len(days_items), day)
 
-                    # if k % 3 == 2 and k != 0 and self.restaurants:
-                    #     food_count += 1
-                    #     if food_count > self.breaks:
-                    #         food_count = 0
-                    #         continue
-                    #     distances = []
-                    #     for rest in self.restaurants:
-                    #         distances.append(get_distance(item, rest))
-                    #     index = distances.index(min(distances))
-                    #     day.insert_item(self.restaurants[index], k)
-                    #     self.restaurants = [self.restaurants[l] for l in range(len(self.restaurants)) if l != index]
+        # insert shopping
+        if self.is_shopping_last:
+            self.days.append(Day(len(self.days), self.market_items))
         return self.days

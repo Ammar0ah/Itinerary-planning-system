@@ -2,6 +2,7 @@ from search_engine.utils.hotels_engine import HotelSearchEngine as Hotels
 from search_engine.utils.places_engine import PlacesSearchEngine as Places
 from search_engine.trip_planner.trip_classes.Item import Item
 from enum import Enum
+from trip_planning.Plan_itinerary import plan_itinerary_schedule
 
 
 class SearchEngine:
@@ -20,7 +21,7 @@ class SearchEngine:
         REVIEWS = 4,  # hotel_id 'int'
         FINDHOTEL = 5,  # hotel_name 'str'
         BESTCHOISE = 6,  # location 'str
-        RECOMMEND = 7,   # hotel_id
+        RECOMMEND = 7,  # hotel_id
 
     class PSEEndPoints(Enum):
         DETAILS = 1,  # place_id : str
@@ -55,7 +56,7 @@ class SearchEngine:
             if trip_mode not in self.TripMode.__members__:
                 raise ValueError('You have entered wrong mode!')
             else:
-                trip_data= {}
+                trip_data = {}
 
                 print('start collecting trip data..')
 
@@ -104,8 +105,12 @@ class SearchEngine:
         else:
             raise ValueError('cannot collect trip components without specifying kinds!')
 
-    def _build_plan(self, data: list, constraints: dict):
-        pass  # add code here!   #ammar
+    def _build_plan(self, data: dict, constraints: dict):
+        trip_plan = plan_itinerary_schedule(items_dict=data,
+                                            places_per_day=constraints['places_per_day'],
+                                            food_count=constraints['food_importance'],
+                                            is_shopping_last=constraints['shop_dis'])
+        return trip_plan.toJSON()
 
     def plan_trip(self, constraints: dict):
         trip_data = self._collect_trip_components(locations=constraints['locations'],
@@ -116,8 +121,8 @@ class SearchEngine:
                                                   places_preferences=constraints['places_preferences'],
                                                   places_per_day=constraints['places_per_day'],
                                                   )
-        self._build_plan(trip_data, constraints)
-        return trip_data
+        trip_plan = self._build_plan(trip_data, constraints)
+        return trip_plan
         # add code here -> return planned trip as json file! ammar
 
     def get(self, engine_type, end_point, query_params):
@@ -151,7 +156,8 @@ class SearchEngine:
                 elif end_point == 'RECOMMEND':
                     if 'id' in query_params:
                         hotel_details = self.hotels.hotel_details(query_params['id'])
-                        hotel_features = hotel_details['HOTEL_FEATURE'] + hotel_details['HOTEL_FREEBIES'] + hotel_details['ROOMS']
+                        hotel_features = hotel_details['HOTEL_FEATURE'] + hotel_details['HOTEL_FREEBIES'] + \
+                                         hotel_details['ROOMS']
                         # add code here --> return list of recommended hotel names   #adnan
                         names = ['Hyatt Regency Istanbul Ataköy']
                         recommended_hotels = []

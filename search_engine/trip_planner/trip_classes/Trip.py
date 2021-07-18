@@ -1,10 +1,9 @@
-from Day import Day
-from Item import Item
+from search_engine.trip_planner.trip_classes.Day import Day
+import json
 
 
 class Trip:
-    def __init__(self, user_name, days: list):
-        self.user_name = user_name
+    def __init__(self, days: list):
         self.days = days
 
     def add_day(self, idx: int, items: list):
@@ -15,6 +14,9 @@ class Trip:
         for day in self.days:
             if day.day == day_id:
                 self.days.remove(day)
+
+    def add_bulk_days(self, days):
+        self.days.extend(days)
 
     def get_trip_plan(self):
         return self.days
@@ -27,4 +29,8 @@ class Trip:
             day.set_index(idx + 1)
 
     def __repr__(self):
-        return 'User Name: %s \nTrip Plan:%s' % (self.user_name, '\n'.join(str(self.days).split('- ')))
+        return 'Trip Plan:%s' % ('\n'.join(str(self.days).split('- ')))
+
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__,
+                          sort_keys=True, indent=4)

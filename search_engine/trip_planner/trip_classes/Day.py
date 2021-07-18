@@ -1,4 +1,4 @@
-from Item import Item
+from search_engine.trip_planner.trip_classes.Item import Item
 from copy import deepcopy
 
 

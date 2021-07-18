@@ -8,6 +8,7 @@ class Item:
 
     def __repr__(self):
         # return f'{self.coordinate["lat"]},{self.coordinate["lon"]}'
-        return 'Item("%s",{"name":"","id":"%s","coordinate":%s,"guestrating":"%s"})' % (
-        self.item_type, self.item_id, self.coordinate
-        , self.rate)
+        # return 'Item("%s",{"name":"","id":"%s","coordinate":%s,"guestrating":"%s"})' % (
+        # self.item_type, self.item_id, self.coordinate
+        # , self.rate)
+        return  self.item_type

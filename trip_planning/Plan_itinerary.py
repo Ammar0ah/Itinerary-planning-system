@@ -26,7 +26,7 @@ with open('../testing/samples/berlin_london_trip_data.pkl', 'rb') as input:
 items = m_trip
 
 
-# ic(items)
+ic(list(items.values()))
 
 def plot_path(path):
     x_axes = [item.coordinate['lat'] for item in path]
@@ -59,6 +59,5 @@ def plan_itinerary_schedule(items_dict: dict, places_per_day, food_count, is_sho
 
 
 if __name__ == '__main__':
-    print(items)
-    full_itinerary = plan_itinerary_schedule(items, places_per_day=3, food_count=2, is_shopping_last=False)
-    ic(full_itinerary.toJSON())
+    full_itinerary = plan_itinerary_schedule(items, places_per_day=5, food_count=2, is_shopping_last=False)
+    ic(full_itinerary.days)

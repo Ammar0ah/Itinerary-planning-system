@@ -139,13 +139,11 @@ class Planner:
 
     # try to remove duplicates and put restaurants breaks,shopping
     def plan_itinerary(self, places_per_day=5, food_count=3):
-        self.days = self.split_trip_on_days(self.path, places_per_day - food_count)
+        self.days = self.split_trip_on_days(self.path, places_per_day)
 
         for i, day in enumerate(self.days):
             days_items = day.items
-            for k in range(0, len(days_items)):
-                if 'hotel' == days_items[k] and k != 0:
-                    day.swap_items(0, k)
+
             # inserting restaurants
             if food_count == 1:
                 self.insert_restaurant(days_items[0], 0, day)
@@ -156,6 +154,10 @@ class Planner:
                 self.insert_restaurant(days_items[0], 0, day)
                 self.insert_restaurant(days_items[len(days_items) // 2], (len(days_items) // 2) + 1, day)
                 self.insert_restaurant(days_items[-1], len(days_items), day)
+            # ensure that hotel at first
+            for k in range(0, len(days_items)):
+                if 'hotel' == days_items[k] and k != 0:
+                    day.swap_items(0, k)
 
         # insert shopping
         if self.is_shopping_last:

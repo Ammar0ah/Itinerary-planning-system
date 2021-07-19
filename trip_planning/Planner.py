@@ -156,7 +156,7 @@ class Planner:
                 self.insert_restaurant(days_items[-1], len(days_items), day)
             # ensure that hotel at first
             for k in range(0, len(days_items)):
-                if 'hotel' == days_items[k] and k != 0:
+                if 'hotel' == days_items[k].item_type and k != 0:
                     day.swap_items(0, k)
 
         # insert shopping

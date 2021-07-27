@@ -142,6 +142,7 @@ class ClusterPlanner:
         places = self.data[self.data['label'] == i]
         p_items = [self.items[int(p['index'])] for l, p in places.iterrows()]
         day_places = p_items
+        # plan if items > 3
         if len(p_items) > 3:
             itinerary = plan_itinerary_LP(p_items)
             day_places = itinerary
@@ -152,8 +153,9 @@ class ClusterPlanner:
             day = Day(i, p_items)
             days.append(day)
 
-        for j in range(0, len(day_places), 3):
-            self.insert_restaurant(day_places[j], j, day)
+        # insert restaurants
+        # for j in range(0, len(day_places), 3):
+        #     self.insert_restaurant(day_places[j], j, day)
 
         for k in range(0, len(day_places)):
             if 'hotel' == day_places[k].item_type and k != 0:

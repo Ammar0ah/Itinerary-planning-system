@@ -3,6 +3,7 @@ from search_engine.utils.places_engine import PlacesSearchEngine as Places
 from search_engine.trip_planner.trip_classes.Item import Item
 from enum import Enum
 from trip_planning.Plan_itinerary import plan_itinerary_schedule
+from trip_planning.Plan_trip_clusters import plan_itinerary_schedule_clusters
 
 
 class SearchEngine:
@@ -110,7 +111,9 @@ class SearchEngine:
                                             places_per_day=constraints['places_per_day'],
                                             food_count=constraints['food_importance'],
                                             is_shopping_last=constraints['shop_dis'])
-        return trip_plan.toJSON()
+
+        trip_plan_clusters = plan_itinerary_schedule_clusters(data)
+        return {'trip1': trip_plan.toJSON(), 'trip2': trip_plan_clusters.toJSON()}
 
     def plan_trip(self, constraints: dict):
         trip_data = self._collect_trip_components(locations=constraints['locations'],

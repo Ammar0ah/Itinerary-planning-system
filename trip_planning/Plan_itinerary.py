@@ -20,13 +20,13 @@ from trip_planning.Planner import Planner, get_distance
 axis = [[32.745255, -74.034775], [34.155834, -119.202789], [42.933334, -100.566666], [42.095554, -79.238609],
         [38.846668, -71.948059], [36.392502, -81.534447], [32.745255, -74.034775]]
 
-with open('../testing/samples/berlin_london_trip_data.pkl', 'rb') as input:
+with open('../testing/samples/berlin_london_istanbul_riyadh_trip_data.pkl', 'rb') as input:
     m_trip = pickle.load(input)
 
 items = m_trip
 
 
-ic(list(items.values()))
+# ic(list(items.values()))
 
 def plot_path(path):
     x_axes = [item.coordinate['lat'] for item in path]
@@ -47,10 +47,10 @@ def plot_path(path):
 def plan_itinerary_schedule(items_dict: dict, places_per_day, food_count, is_shopping_last):
     trip = Trip(days=[])
     if places_per_day > food_count:
-        for key, value in items_dict.items():
+        for value in items_dict.values():
             planner = Planner(value, shopping_last=is_shopping_last)
             optimal_route, optimal_cost, path = planner.plan_two_opt(iterations=5)
-
+            ic(path)
             full_plan_city = planner.plan_itinerary(places_per_day, food_count)
             trip.add_bulk_days(full_plan_city)
     else:
@@ -59,5 +59,5 @@ def plan_itinerary_schedule(items_dict: dict, places_per_day, food_count, is_sho
 
 
 if __name__ == '__main__':
-    full_itinerary = plan_itinerary_schedule(items, places_per_day=5, food_count=2, is_shopping_last=False)
+    full_itinerary = plan_itinerary_schedule(items, places_per_day=9, food_count=3, is_shopping_last=False)
     ic(full_itinerary.days)

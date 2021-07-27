@@ -7,7 +7,7 @@ search_engine = SearchEngine()
 Build Trips
 '''
 consts = {
-        'locations': ['berlin', 'london'],  # 1
+        'locations': ['berlin', 'london','istanbul','riyadh'],  # 1
         'trip_mode': 'extended_trip',  # 2
         'food_importance': 3,  # 3
         'shop_importance': 1,  # 4
@@ -20,8 +20,8 @@ trip = search_engine.plan_trip(constraints=consts)
 print(trip)
 
 
-with open('samples/berlin_london_trip_data.pkl', 'wb') as output:
-    pickle.dump(trip, output, pickle.HIGHEST_PROTOCOL)
+# with open('samples/berlin_london_istanbul_riyadh_trip_data.pkl', 'wb') as output:
+#     pickle.dump(trip, output, pickle.HIGHEST_PROTOCOL)
 
 # with open('samples/milan_trip_data.pkl', 'rb') as input:
 #     l_trip = pickle.load(input)
@@ -34,7 +34,7 @@ booking_dict = {
     'check_in_date' : "2021-07-22",
     'check_out_date' : "2021-07-27",
     'adults' : 1,
-    'sort_order' : 'GUEST_RATING'
+    'sort_order' : 'GUEST_RATING
 }
 
 # res1 = search_engine.get('HOTELS', 'BOOK',booking_dict)

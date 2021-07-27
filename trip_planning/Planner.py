@@ -2,18 +2,11 @@ from copy import deepcopy
 from typing import List
 # import gmplot
 from search_engine.trip_planner.trip_classes.Item import Item
-import pickle
-from icecream import ic
 import random
 # import geopandas
-from math import floor
 from haversine import haversine
 import numpy as np
 
-from matplotlib import pyplot as plt
-import math
-# import networkx as nx
-from collections import Counter
 
 from search_engine.trip_planner.trip_classes.Day import Day
 import json

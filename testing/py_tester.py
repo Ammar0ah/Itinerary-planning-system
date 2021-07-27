@@ -34,7 +34,7 @@ booking_dict = {
     'check_in_date' : "2021-07-22",
     'check_out_date' : "2021-07-27",
     'adults' : 1,
-    'sort_order' : 'GUEST_RATING
+    'sort_order' : 'GUEST_RATING'
 }
 
 # res1 = search_engine.get('HOTELS', 'BOOK',booking_dict)

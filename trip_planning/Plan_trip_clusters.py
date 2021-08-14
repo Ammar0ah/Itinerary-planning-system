@@ -134,7 +134,7 @@ class ClusterPlanner:
             index = distances.index(min(distances))
             day.insert_item(self.restaurants[index], idx)
             self.restaurants = [self.restaurants[l] for l in range(len(self.restaurants)) if l != index]
-
+    # plan every cluster in city then return the full plan
     def plan_days(self, i=0, days=[]):
 
         if i == self.n_clusters:
@@ -163,7 +163,7 @@ class ClusterPlanner:
 
         return self.plan_days(i + 1, days)
 
-
+# reorganize plan
 def plan_itinerary_schedule_clusters(items: dict):
     trip = Trip(days=[])
     for k, city in items.items():

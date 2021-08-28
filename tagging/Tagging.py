@@ -41,6 +41,7 @@ if __name__ == '__main__':
 
     with open('lda.pkl','rb') as f:
         model =  pickle.load(f)[0]
-    tags = get_review_asbects("The Shelborne is horrible with very outdated rooms! Our room had no furniture besides the bed, 1 chair, and a mini fridge. No table to place small items or a wallet on and no dressers, we were literally living out of our suitcases on the floor. Even the shower didn't have any shelves for personal bath items, again we had to place everything on the bathroom floor in the shower. It's one of the worst hotels I've stayed at in many years! Our room was not cleaned within an appropriate time frame so we were not getting new towels. When we asked for our room to be cleaned and to get new linens at the front desk we were told housekeeping had until 5pm to come clean the room. Most of the beach front rooms don't have a balcony to sit on, so you just have the window view only. If you're on one of the top floor it literally takes 10 minutes or longer just to get on the elevator and 1 elevator shut down for hours during our stay! We were so dissatisfied with the hotel & our room set up that we changed hotels mid trip!",
-                              model,cv)
+    text = "We loved the location of this hotel The fact that it is set in a Park away from the busy centre of dam square was great The tram system was brilliant and easy to handle The hotel is lovely and the bed was comfy Staff were very friendly and helpful and familiarized themselves with us when they realized we travelled from Ireland.\
+yet we did not like the fact that breakfast was not included although you could pay extra for this The room we stayed in was lacking in space a bit and the bathroom was very badly lit to use the mirror in there which meant getting ready for evening a bit tricky but only a small negative comment"
+    tags = get_review_asbects(text,model,cv)
     print(tags)

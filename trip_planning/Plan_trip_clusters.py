@@ -20,11 +20,19 @@ from ortools.constraint_solver import routing_enums_pb2
 from ortools.constraint_solver import pywrapcp
 import requests
 import json
+import folium
+
+from trip_planning.Plan_itinerary import plot_path,colors
+
 API_KEY = '5b3ce3597851110001cf624859a9e4cf86a3409abd7387ad2d5cac7a'
 url = 'https://api.openrouteservice.org/v2/matrix/driving-car'
 
 
+
 from haversine import haversine
+
+
+
 
 def get_distance(item1: Item, item2: Item):
     cord1 = item1.coordinate
@@ -108,8 +116,8 @@ def plan_itinerary_LP(p_items):
 
 
 class ClusterPlanner:
-    def __init__(self, items):
-        self.n_clusters = 5
+    def __init__(self, items,n_opi):
+        self.n_clusters = len(items) // n_opi
         self.clusterer = None
         self.food_types = ['restaurants', 'fast_food', 'food']
         self.items = [item for item in items if item.item_type not in self.food_types]
@@ -134,8 +142,9 @@ class ClusterPlanner:
             index = distances.index(min(distances))
             day.insert_item(self.restaurants[index], idx)
             self.restaurants = [self.restaurants[l] for l in range(len(self.restaurants)) if l != index]
+
     # plan every cluster in city then return the full plan
-    def plan_days(self, i=0, days=[]):
+    def plan_days(self, i=0, days=[],activities=[]):
 
         if i == self.n_clusters:
             return days
@@ -144,14 +153,25 @@ class ClusterPlanner:
         day_places = p_items
         # plan if items > 3
         if len(p_items) > 3:
-            itinerary = plan_itinerary_LP(p_items)
+            itinerary = plan_itinerary_LP(p_items)[:-1]
             day_places = itinerary
-            day = Day(i, itinerary)
-            days.append(day)
+            if len(p_items) > 5:
+                day = Day(i,itinerary[:5])
+                day_places = itinerary[:5]
+                days.append(day)
+                day = Day(i, itinerary[5:])
+                day_places = itinerary[5:]
+                days.append(day)
+            else:
+
+                day = Day(i, itinerary)
+                days.append(day)
+            activities = []
 
         else:
-            day = Day(i, p_items)
-            days.append(day)
+            activities.append(p_items)
+            # day = Day(i, p_items)
+            # days.append(day)
 
         # insert restaurants
         # for j in range(0, len(day_places), 3):
@@ -161,18 +181,19 @@ class ClusterPlanner:
             if 'hotel' == day_places[k].item_type and k != 0:
                 day.swap_items(0, k)
 
-        return self.plan_days(i + 1, days)
+        return self.plan_days(i + 1, days,activities)
 
 # reorganize plan
 def plan_itinerary_schedule_clusters(items: dict):
     trip = Trip(days=[])
     for k, city in items.items():
-        clusterer = ClusterPlanner(city)
+        clusterer = ClusterPlanner(city,4)
         clusterer.cluster_data()
         plan_days = clusterer.plan_days()
 
     trip.add_bulk_days(plan_days)
-
+    ic('clusters',trip.days)
+    plot_path(trip,'map_clusters.html')
     return trip
 
 

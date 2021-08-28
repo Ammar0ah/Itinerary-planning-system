@@ -7,7 +7,6 @@ import random
 from haversine import haversine
 import numpy as np
 
-
 from search_engine.trip_planner.trip_classes.Day import Day
 import json
 import requests
@@ -31,18 +30,18 @@ class Planner:
         self.is_shopping_last = shopping_last
         self.types = [item.item_type for item in items]
         self.coordinates = []
-
+        # print(len(items))
         self.food_types = ['restaurants', 'fast_food', 'food']
         self.market_types = ['shop']
         self.entertainment_types = ['sport', 'natural']
 
         self.url = 'https://api.openrouteservice.org/v2/matrix/driving-car'
         self.restaurants = [item for item in items if item.item_type in self.food_types]
+        # print('res',len(self.restaurants))
         # shopping
         self.market_items = []
-
         if shopping_last:
-            self.items = [item for item in items if item.item_type not in self.food_types + self.market_items]
+            self.items = [item for item in items if item.item_type not in self.food_types + self.market_types]
 
             self.market_items = [item for item in items if item.item_type in self.market_types]
 
@@ -72,15 +71,18 @@ class Planner:
 
     # 2-opt
 
+    def delta(self, n1, n2, n3, n4):
+        return self.graph[n1][n3] + self.graph[n2][n4] - self.graph[n1][n2] - self.graph[n3][n4]
+
     def cost(self, route):
         graph = np.array(self.graph)
         return graph[np.roll(route, 1), route].sum()
 
     # plan optimal path on distance
     def plan_two_opt(self, iterations=5):
-        i = 0
-        while i < iterations:
-            i += 1
+        iter = 0
+        while iter < iterations:
+            iter += 1
             initial_route = [0] + random.sample(range(1, len(self.graph)), len(self.graph) - 1)
 
             best_route = initial_route
@@ -89,6 +91,9 @@ class Planner:
             while improved:
                 improved = False
                 tries += 1
+                if tries > 100:
+                    print(tries)
+                    break
                 for i in range(1, len(self.graph) - 2):
                     for j in range(i + 1, len(self.graph)):
                         if j - i == 1:
@@ -98,6 +103,7 @@ class Planner:
                         if self.cost(new_route) < self.cost(best_route):
                             improved = True
                             best_route = new_route
+
             self.path = [self.items[i] for i in best_route]
             self.optimal_cost = 0
             self.optimal_route = best_route
@@ -107,17 +113,20 @@ class Planner:
         return self.optimal_route, self.optimal_cost, self.path
 
     # make schedule
-    def split_trip_on_days(self, path, poi_per_day):
+    def split_trip_on_days(self, path, poi_per_day, n_days):
         places = []
-
+        idx = 0
         for i, place in enumerate(path):
             places.append(place)
             if len(places) >= poi_per_day:
-                self.days.append(Day(i // poi_per_day, deepcopy(places)))
+                self.days.append(Day(idx, deepcopy(places)))
+                idx +=1
                 places = []
         # for items less than 5
         if places:
-            self.days.append(Day(len(self.days), places))
+            self.days.append(Day(idx, places))
+            idx+=1
+            places = []
         return self.days
 
     # insert restaurant in the day at index
@@ -131,8 +140,12 @@ class Planner:
             self.restaurants = [self.restaurants[l] for l in range(len(self.restaurants)) if l != index]
 
     # try to remove duplicates and put restaurants breaks,shopping
-    def plan_itinerary(self, places_per_day=5, food_count=3):
-        self.days = self.split_trip_on_days(self.path, places_per_day)
+    def plan_itinerary(self, places_per_day=5, food_count=3, shop_count=1, n_days=3):
+        ### if shopping is not in the last day, consider it as POI
+        if self.is_shopping_last:
+            self.days = self.split_trip_on_days(self.path, places_per_day, n_days)
+        else:
+            self.days = self.split_trip_on_days(self.path, places_per_day + shop_count, n_days)
 
         for i, day in enumerate(self.days):
             days_items = day.items

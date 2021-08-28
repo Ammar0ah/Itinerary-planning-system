@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2026ef4490af43c4bd735ce9ab02df54 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_2026ef4490af43c4bd735ce9ab02df54" ></div>
+        
+</body>
+<script>    
+    
+            var map_2026ef4490af43c4bd735ce9ab02df54 = L.map(
+                "map_2026ef4490af43c4bd735ce9ab02df54",
+                {
+                    center: [52.529412, 13.125847],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_fc91bd4b08b3421cbf6f25bc915a5c7e = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_2026ef4490af43c4bd735ce9ab02df54);
+        
+    
+            var marker_3cbd136f827a4b7a84476a7eee706f00 = L.marker(
+                [48.867158, 2.327068],
+                {}
+            ).addTo(map_2026ef4490af43c4bd735ce9ab02df54);
+        
+    
+            var icon_fbe71eb5872648c59fb0608279786f03 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3cbd136f827a4b7a84476a7eee706f00.setIcon(icon_fbe71eb5872648c59fb0608279786f03);
+        
+    
+            marker_3cbd136f827a4b7a84476a7eee706f00.bindTooltip(
+                `<div>
+                     Day:1,Place:1, hotel, Mandarin Oriental, Paris
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5926519d8a014d2788d97d33bedff6bd = L.marker(
+                [48.867298, 2.32831],
+                {}
+            ).addTo(map_2026ef4490af43c4bd735ce9ab02df54);
+        
+    
+            var icon_ba0f708d86654a049d6fa26034085b44 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5926519d8a014d2788d97d33bedff6bd.setIcon(icon_ba0f708d86654a049d6fa26034085b44);
+        
+    
+            marker_5926519d8a014d2788d97d33bedff6bd.bindTooltip(
+                `<div>
+                     Day:1,Place:2, architecture, hôtel de Villemaré
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_89be28b08c22487f81d4691a4541101b = L.marker(
+                [48.867474, 2.329438],
+                {}
+            ).addTo(map_2026ef4490af43c4bd735ce9ab02df54);
+        
+    
+            var icon_80172eee034441c5a7ae9b751bcea855 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_89be28b08c22487f81d4691a4541101b.setIcon(icon_80172eee034441c5a7ae9b751bcea855);
+        
+    
+            marker_89be28b08c22487f81d4691a4541101b.bindTooltip(
+                `<div>
+                     Day:1,Place:3, cultural, Colonne Vendôme
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_22afcb0f72db4958970188ea40961b32 = L.marker(
+                [48.869812, 2.322388],
+                {}
+            ).addTo(map_2026ef4490af43c4bd735ce9ab02df54);
+        
+    
+            var icon_0ab31445f4fc4c75aeeb7e34649a2e6c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_22afcb0f72db4958970188ea40961b32.setIcon(icon_0ab31445f4fc4c75aeeb7e34649a2e6c);
+        
+    
+            marker_22afcb0f72db4958970188ea40961b32.bindTooltip(
+                `<div>
+                     Day:1,Place:4, shop, Galerie de la Madeleine
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0e83022661ed4b93a47f181f407776dc = L.marker(
+                [52.515915, 13.394078],
+                {}
+            ).addTo(map_2026ef4490af43c4bd735ce9ab02df54);
+        
+    
+            var icon_8e7b86d0399143cf9830c89fe882165e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0e83022661ed4b93a47f181f407776dc.setIcon(icon_8e7b86d0399143cf9830c89fe882165e);
+        
+    
+            marker_0e83022661ed4b93a47f181f407776dc.bindTooltip(
+                `<div>
+                     Day:2,Place:1, hotel, Rocco Forte Hotel De Rome Berlin
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d299ba0735054d468a8541b4f5263599 = L.marker(
+                [52.516399, 13.3933],
+                {}
+            ).addTo(map_2026ef4490af43c4bd735ce9ab02df54);
+        
+    
+            var icon_c25c8db9d5714b73af79649294c85f0a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d299ba0735054d468a8541b4f5263599.setIcon(icon_c25c8db9d5714b73af79649294c85f0a);
+        
+    
+            marker_d299ba0735054d468a8541b4f5263599.bindTooltip(
+                `<div>
+                     Day:2,Place:2, architecture, Alte Bibliothek
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ed11ccf9d93f4e21a527b8a02b0de5d4 = L.marker(
+                [52.516487, 13.393826],
+                {}
+            ).addTo(map_2026ef4490af43c4bd735ce9ab02df54);
+        
+    
+            var icon_a1a9b51b3f064c34964894d98ffd3b4e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ed11ccf9d93f4e21a527b8a02b0de5d4.setIcon(icon_a1a9b51b3f064c34964894d98ffd3b4e);
+        
+    
+            marker_ed11ccf9d93f4e21a527b8a02b0de5d4.bindTooltip(
+                `<div>
+                     Day:2,Place:3, cultural, Bebelplatz
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d5d35715445d487f907ec3bb5431b229 = L.marker(
+                [52.519199, 13.3836],
+                {}
+            ).addTo(map_2026ef4490af43c4bd735ce9ab02df54);
+        
+    
+            var icon_9df969c8e7bb4758a6cdc0987c4d1108 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d5d35715445d487f907ec3bb5431b229.setIcon(icon_9df969c8e7bb4758a6cdc0987c4d1108);
+        
+    
+            marker_d5d35715445d487f907ec3bb5431b229.bindTooltip(
+                `<div>
+                     Day:2,Place:4, shop, Markthalle IV
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_52cad878717a4da480cd3f0630629f86 = L.marker(
+                [51.529412, -0.125847],
+                {}
+            ).addTo(map_2026ef4490af43c4bd735ce9ab02df54);
+        
+    
+            var icon_81c1a2a20df842218a2beba8fc9c4137 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_52cad878717a4da480cd3f0630629f86.setIcon(icon_81c1a2a20df842218a2beba8fc9c4137);
+        
+    
+            marker_52cad878717a4da480cd3f0630629f86.bindTooltip(
+                `<div>
+                     Day:3,Place:1, hotel, St. Pancras Renaissance Hotel London
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7b61de63b95745eb8b21503cfd38aaf1 = L.marker(
+                [51.528999, -0.1255],
+                {}
+            ).addTo(map_2026ef4490af43c4bd735ce9ab02df54);
+        
+    
+            var icon_be2f17b3333142648e5ca02a32a54fcc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_7b61de63b95745eb8b21503cfd38aaf1.setIcon(icon_be2f17b3333142648e5ca02a32a54fcc);
+        
+    
+            marker_7b61de63b95745eb8b21503cfd38aaf1.bindTooltip(
+                `<div>
+                     Day:3,Place:2, architecture, Camden Town Hall
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dc08c9ab426e41ec8a46d5be254d4e1f = L.marker(
+                [51.523998, -0.124],
+                {}
+            ).addTo(map_2026ef4490af43c4bd735ce9ab02df54);
+        
+    
+            var icon_b4ea7ccf72dc4c4886bdaa0b7f7649b5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_dc08c9ab426e41ec8a46d5be254d4e1f.setIcon(icon_b4ea7ccf72dc4c4886bdaa0b7f7649b5);
+        
+    
+            marker_dc08c9ab426e41ec8a46d5be254d4e1f.bindTooltip(
+                `<div>
+                     Day:3,Place:3, shop, Brunswick Centre
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_77fc0b87a4be4214b9180edc775f6fa3 = L.marker(
+                [51.529598, -0.128129],
+                {}
+            ).addTo(map_2026ef4490af43c4bd735ce9ab02df54);
+        
+    
+            var icon_59d6ebb9ae124a7eb8b7b0b7bf672cae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_77fc0b87a4be4214b9180edc775f6fa3.setIcon(icon_59d6ebb9ae124a7eb8b7b0b7bf672cae);
+        
+    
+            marker_77fc0b87a4be4214b9180edc775f6fa3.bindTooltip(
+                `<div>
+                     Day:3,Place:4, cultural, British Library Exhibition Space
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_2eeac6a3792d441d83a8ccfbb9caa750 = L.polyline(
+                [[48.867158, 2.327068], [48.867298, 2.32831], [48.867474, 2.329438], [48.869812, 2.322388], [52.515915, 13.394078], [52.516399, 13.3933], [52.516487, 13.393826], [52.519199, 13.3836], [51.529412, -0.125847], [51.528999, -0.1255], [51.523998, -0.124], [51.529598, -0.128129]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_2026ef4490af43c4bd735ce9ab02df54);
+        
+</script>

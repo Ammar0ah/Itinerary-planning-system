@@ -32,5 +32,19 @@ class Trip:
         return 'Trip Plan:%s' % ('\n'.join(str(self.days).split('- ')))
 
     def toJSON(self):
-        return json.dumps(self, default=lambda o: o.__dict__,
-                          sort_keys=True, indent=4)
+        jsn = {"days":[]}
+        for i,day in enumerate(self.days):
+            jsn["days"].append({
+                "day_index":i + 1,
+                "items":[{
+                    "item_id":str(item.item_id),
+                    "item_type":['restaurants', 'fast_food', 'food','shop','natural','sport','cultural','architecture'],
+                    "type": 2 if item.item_type == "hotel" else 1,
+                    "distance":item.distance,
+                    "name":item.name,
+                    "city":item.city,
+                    "coordinate":item.coordinate,
+                    "rate":str(item.rate),
+                } for item in day.items]
+            })
+        return jsn

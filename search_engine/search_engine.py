@@ -1,10 +1,12 @@
+import pickle
+
 from search_engine.utils.hotels_engine import HotelSearchEngine as Hotels
 from search_engine.utils.places_engine import PlacesSearchEngine as Places
 from search_engine.trip_planner.trip_classes.Item import Item
 from enum import Enum
 from trip_planning.Plan_itinerary import plan_itinerary_schedule
 from trip_planning.Plan_trip_clusters import plan_itinerary_schedule_clusters
-
+import json
 
 class SearchEngine:
     def __init__(self):
@@ -72,7 +74,7 @@ class SearchEngine:
                     print(f'collecting best hotels in {location}..')
 
                     starting_pt = self.hotels.best_hotels_in_country(location)  # starting point -> first hotel.
-                    trip_components.append(Item('hotel', starting_pt['0']))
+                    trip_components.append(Item(location,'hotel', starting_pt['0']))
 
                     if food_importance > 0:
                         print(f'collecting food palces in {location}..')
@@ -81,7 +83,7 @@ class SearchEngine:
                                                                   foods_count,
                                                                   'foods', '3')
                         for place in places:
-                            trip_components.append(Item('food', place))
+                            trip_components.append(Item(location,'food', place))
                     if shop_importance > 0:
                         print(f'collecting shopping places in {location}..')
                         places = self.places.get_top_rated_places(starting_pt['0']['coordinate']['lat'],
@@ -89,7 +91,7 @@ class SearchEngine:
                                                                   shops_count,
                                                                   'shops', '3')
                         for place in places:
-                            trip_components.append(Item('shop', place))
+                            trip_components.append(Item(location,'shop', place))
                     print('collecting Point of Interest Places...')
                     for place_type in preferences.keys():
 
@@ -100,7 +102,7 @@ class SearchEngine:
                                                                   '3')
 
                         for place in places:
-                            trip_components.append(Item(str(self.OptionalPlacesKinds[place_type].value[0]), place))
+                            trip_components.append(Item(location,str(self.OptionalPlacesKinds[place_type].value[0]), place))
                         trip_data[location] = trip_components
             return trip_data
         else:
@@ -110,10 +112,16 @@ class SearchEngine:
         trip_plan = plan_itinerary_schedule(items_dict=data,
                                             places_per_day=constraints['places_per_day'],
                                             food_count=constraints['food_importance'],
-                                            is_shopping_last=constraints['shop_dis'])
+                                            is_shopping_last=constraints['shop_dis'],
+                                            shop_count=constraints['shop_importance'],
+                                            n_days=constraints['days_count']
+                                            )
 
         trip_plan_clusters = plan_itinerary_schedule_clusters(data)
-        return {'trip1': trip_plan.toJSON(), 'trip2': trip_plan_clusters.toJSON()}
+        jsn = {'trip1': trip_plan.toJSON(), 'trip2': trip_plan_clusters.toJSON()}
+        with open('trip.json', 'w') as f:
+            json.dump(jsn, f,indent=4)
+        return jsn
 
     def plan_trip(self, constraints: dict):
         trip_data = self._collect_trip_components(locations=constraints['locations'],
@@ -124,6 +132,8 @@ class SearchEngine:
                                                   places_preferences=constraints['places_preferences'],
                                                   places_per_day=constraints['places_per_day'],
                                                   )
+
+
         trip_plan = self._build_plan(trip_data, constraints)
         return trip_plan
         # add code here -> return planned trip as json file! ammar

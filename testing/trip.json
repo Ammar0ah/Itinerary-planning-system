@@ -1,0 +1,469 @@
+{
+    "trip1": {
+        "days": [
+            {
+                "day_index": 1,
+                "items": [
+                    {
+                        "item_id": "380965",
+                        "item_type": "hotel",
+                        "type": 2,
+                        "distance": 0,
+                        "name": "Mandarin Oriental, Paris",
+                        "city": "paris",
+                        "coordinate": {
+                            "lat": 48.867158,
+                            "lon": 2.327068
+                        },
+                        "rate": "9.0"
+                    },
+                    {
+                        "item_id": "N1677082793",
+                        "item_type": "food",
+                        "type": 1,
+                        "distance": 147.79573387,
+                        "name": "Les Feuillants Convent",
+                        "city": "paris",
+                        "coordinate": {
+                            "lat": 48.866249,
+                            "lon": 2.328539
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q3146004",
+                        "item_type": "architecture",
+                        "type": 1,
+                        "distance": 92.47890225,
+                        "name": "h\u00f4tel de Villemar\u00e9",
+                        "city": "paris",
+                        "coordinate": {
+                            "lat": 48.867298,
+                            "lon": 2.32831
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "W32876070",
+                        "item_type": "shop",
+                        "type": 1,
+                        "distance": 452.72763322,
+                        "name": "Galerie de la Madeleine",
+                        "city": "paris",
+                        "coordinate": {
+                            "lat": 48.869812,
+                            "lon": 2.322388
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "W227762241",
+                        "item_type": "cultural",
+                        "type": 1,
+                        "distance": 177.37270156,
+                        "name": "Colonne Vend\u00f4me",
+                        "city": "paris",
+                        "coordinate": {
+                            "lat": 48.867474,
+                            "lon": 2.329438
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N3980577963",
+                        "item_type": "food",
+                        "type": 1,
+                        "distance": 345.18104673,
+                        "name": "Minim's",
+                        "city": "paris",
+                        "coordinate": {
+                            "lat": 48.867554,
+                            "lon": 2.322401
+                        },
+                        "rate": "7"
+                    }
+                ]
+            },
+            {
+                "day_index": 2,
+                "items": [
+                    {
+                        "item_id": "247869",
+                        "item_type": "hotel",
+                        "type": 2,
+                        "distance": 0,
+                        "name": "Rocco Forte Hotel De Rome Berlin",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.515915,
+                            "lon": 13.394078
+                        },
+                        "rate": "9.0"
+                    },
+                    {
+                        "item_id": "N6121773112",
+                        "item_type": "food",
+                        "type": 1,
+                        "distance": 643.08462955,
+                        "name": "Mensa Neuer Marstall",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.516552,
+                            "lon": 13.403493
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q1901032",
+                        "item_type": "shop",
+                        "type": 1,
+                        "distance": 799.71410207,
+                        "name": "Markthalle IV",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.519199,
+                            "lon": 13.3836
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q435399",
+                        "item_type": "architecture",
+                        "type": 1,
+                        "distance": 75.51224782,
+                        "name": "Alte Bibliothek",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.516399,
+                            "lon": 13.3933
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "W205728152",
+                        "item_type": "cultural",
+                        "type": 1,
+                        "distance": 65.92301116,
+                        "name": "Bebelplatz",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.516487,
+                            "lon": 13.393826
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N1433120469",
+                        "item_type": "food",
+                        "type": 1,
+                        "distance": 687.33563633,
+                        "name": "Heat-Berlin",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.519344,
+                            "lon": 13.4025
+                        },
+                        "rate": "7"
+                    }
+                ]
+            },
+            {
+                "day_index": 3,
+                "items": [
+                    {
+                        "item_id": "360456",
+                        "item_type": "hotel",
+                        "type": 2,
+                        "distance": 0,
+                        "name": "St. Pancras Renaissance Hotel London",
+                        "city": "london",
+                        "coordinate": {
+                            "lat": 51.529412,
+                            "lon": -0.125847
+                        },
+                        "rate": "8.6"
+                    },
+                    {
+                        "item_id": "N1980151259",
+                        "item_type": "food",
+                        "type": 1,
+                        "distance": 175.32889382,
+                        "name": "British Library restaurant",
+                        "city": "london",
+                        "coordinate": {
+                            "lat": 51.530228,
+                            "lon": -0.12801
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N2617232245",
+                        "item_type": "cultural",
+                        "type": 1,
+                        "distance": 159.74438573,
+                        "name": "British Library Exhibition Space",
+                        "city": "london",
+                        "coordinate": {
+                            "lat": 51.529598,
+                            "lon": -0.128129
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q5025822",
+                        "item_type": "architecture",
+                        "type": 1,
+                        "distance": 51.77868721,
+                        "name": "Camden Town Hall",
+                        "city": "london",
+                        "coordinate": {
+                            "lat": 51.528999,
+                            "lon": -0.1255
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q4979489",
+                        "item_type": "shop",
+                        "type": 1,
+                        "distance": 615.62265942,
+                        "name": "Brunswick Centre",
+                        "city": "london",
+                        "coordinate": {
+                            "lat": 51.523998,
+                            "lon": -0.124
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "W132319674",
+                        "item_type": "food",
+                        "type": 1,
+                        "distance": 254.69483031,
+                        "name": "The Rocket",
+                        "city": "london",
+                        "coordinate": {
+                            "lat": 51.528236,
+                            "lon": -0.128996
+                        },
+                        "rate": "7"
+                    }
+                ]
+            }
+        ]
+    },
+    "trip2": {
+        "days": [
+            {
+                "day_index": 1,
+                "items": [
+                    {
+                        "item_id": "380965",
+                        "item_type": "hotel",
+                        "type": 2,
+                        "distance": 0,
+                        "name": "Mandarin Oriental, Paris",
+                        "city": "paris",
+                        "coordinate": {
+                            "lat": 48.867158,
+                            "lon": 2.327068
+                        },
+                        "rate": "9.0"
+                    },
+                    {
+                        "item_id": "Q3146004",
+                        "item_type": "architecture",
+                        "type": 1,
+                        "distance": 92.47890225,
+                        "name": "h\u00f4tel de Villemar\u00e9",
+                        "city": "paris",
+                        "coordinate": {
+                            "lat": 48.867298,
+                            "lon": 2.32831
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "W227762241",
+                        "item_type": "cultural",
+                        "type": 1,
+                        "distance": 177.37270156,
+                        "name": "Colonne Vend\u00f4me",
+                        "city": "paris",
+                        "coordinate": {
+                            "lat": 48.867474,
+                            "lon": 2.329438
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "W32876070",
+                        "item_type": "shop",
+                        "type": 1,
+                        "distance": 452.72763322,
+                        "name": "Galerie de la Madeleine",
+                        "city": "paris",
+                        "coordinate": {
+                            "lat": 48.869812,
+                            "lon": 2.322388
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "380965",
+                        "item_type": "hotel",
+                        "type": 2,
+                        "distance": 0,
+                        "name": "Mandarin Oriental, Paris",
+                        "city": "paris",
+                        "coordinate": {
+                            "lat": 48.867158,
+                            "lon": 2.327068
+                        },
+                        "rate": "9.0"
+                    }
+                ]
+            },
+            {
+                "day_index": 2,
+                "items": [
+                    {
+                        "item_id": "247869",
+                        "item_type": "hotel",
+                        "type": 2,
+                        "distance": 0,
+                        "name": "Rocco Forte Hotel De Rome Berlin",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.515915,
+                            "lon": 13.394078
+                        },
+                        "rate": "9.0"
+                    },
+                    {
+                        "item_id": "Q435399",
+                        "item_type": "architecture",
+                        "type": 1,
+                        "distance": 75.51224782,
+                        "name": "Alte Bibliothek",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.516399,
+                            "lon": 13.3933
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "W205728152",
+                        "item_type": "cultural",
+                        "type": 1,
+                        "distance": 65.92301116,
+                        "name": "Bebelplatz",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.516487,
+                            "lon": 13.393826
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q1901032",
+                        "item_type": "shop",
+                        "type": 1,
+                        "distance": 799.71410207,
+                        "name": "Markthalle IV",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.519199,
+                            "lon": 13.3836
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "247869",
+                        "item_type": "hotel",
+                        "type": 2,
+                        "distance": 0,
+                        "name": "Rocco Forte Hotel De Rome Berlin",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.515915,
+                            "lon": 13.394078
+                        },
+                        "rate": "9.0"
+                    }
+                ]
+            },
+            {
+                "day_index": 3,
+                "items": [
+                    {
+                        "item_id": "360456",
+                        "item_type": "hotel",
+                        "type": 2,
+                        "distance": 0,
+                        "name": "St. Pancras Renaissance Hotel London",
+                        "city": "london",
+                        "coordinate": {
+                            "lat": 51.529412,
+                            "lon": -0.125847
+                        },
+                        "rate": "8.6"
+                    },
+                    {
+                        "item_id": "Q5025822",
+                        "item_type": "architecture",
+                        "type": 1,
+                        "distance": 51.77868721,
+                        "name": "Camden Town Hall",
+                        "city": "london",
+                        "coordinate": {
+                            "lat": 51.528999,
+                            "lon": -0.1255
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q4979489",
+                        "item_type": "shop",
+                        "type": 1,
+                        "distance": 615.62265942,
+                        "name": "Brunswick Centre",
+                        "city": "london",
+                        "coordinate": {
+                            "lat": 51.523998,
+                            "lon": -0.124
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N2617232245",
+                        "item_type": "cultural",
+                        "type": 1,
+                        "distance": 159.74438573,
+                        "name": "British Library Exhibition Space",
+                        "city": "london",
+                        "coordinate": {
+                            "lat": 51.529598,
+                            "lon": -0.128129
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "360456",
+                        "item_type": "hotel",
+                        "type": 2,
+                        "distance": 0,
+                        "name": "St. Pancras Renaissance Hotel London",
+                        "city": "london",
+                        "coordinate": {
+                            "lat": 51.529412,
+                            "lon": -0.125847
+                        },
+                        "rate": "8.6"
+                    }
+                ]
+            }
+        ]
+    }
+}

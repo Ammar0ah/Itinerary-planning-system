@@ -3,9 +3,9 @@ from copy import deepcopy
 
 
 class Day:
-    def __init__(self, idx: int, items: list):
-        self.idx = idx
-        self.items = items
+    def __init__(self, idx: int, activities: list):
+        self.day_index = idx
+        self.items = activities
 
     def add_item(self, item):
         self.items.append(item)
@@ -22,7 +22,7 @@ class Day:
         self.items[item1_ind], self.items[item2_ind] = self.items[item2_ind], self.items[item1_ind]
 
     def set_index(self, idx: int):
-        self.idx = idx
+        self.day_index = idx
 
     def __repr__(self):
-        return '- day%s:%s' % (self.idx, '\n'.join(str(self.items).split('- ')))
+        return '- day%s:%s' % (self.day_index, '\n'.join(str(self.items).split('- ')))

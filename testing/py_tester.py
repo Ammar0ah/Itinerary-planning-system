@@ -2,7 +2,7 @@ import pickle
 
 from search_engine.search_engine import SearchEngine
 from trip_planning.Plan_itinerary import plan_itinerary_schedule
-import json
+
 
 from trip_planning.Plan_trip_clusters import plan_itinerary_schedule_clusters
 

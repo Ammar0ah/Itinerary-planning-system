@@ -1,9 +1,7 @@
 from copy import deepcopy
 from typing import List
-# import gmplot
 from search_engine.trip_planner.trip_classes.Item import Item
 import random
-# import geopandas
 from haversine import haversine
 import numpy as np
 

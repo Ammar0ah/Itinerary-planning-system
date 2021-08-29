@@ -1,16 +1,9 @@
-import hdbscan
-# from ortools.linear_solver import pywraplp
-# from ortools.sat.python import cp_model
+
 from search_engine.trip_planner.trip_classes.Day import Day
 from search_engine.trip_planner.trip_classes.Item import Item
-import numpy as np
-from sklearn.preprocessing import LabelEncoder
 import pandas as pd
-from sklearn.cluster import KMeans,DBSCAN, AgglomerativeClustering
-# from k_means_constrained import KMeansConstrained
-# import seaborn as sns; sns.set()
-import matplotlib.pyplot as plt
-from sklearn_extra.cluster import KMedoids
+from sklearn.cluster import KMeans
+
 import pickle
 from search_engine.trip_planner.trip_classes.Trip import Trip
 from icecream import ic
@@ -20,7 +13,6 @@ from ortools.constraint_solver import routing_enums_pb2
 from ortools.constraint_solver import pywrapcp
 import requests
 import json
-import folium
 
 from trip_planning.Plan_itinerary import plot_path,colors
 

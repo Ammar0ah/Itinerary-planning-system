@@ -23,7 +23,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_e038ee95e9cc4c0d953675f758ce822a {
+                #map_84bbbbfff03043769ee8e21cc28bfa6a {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -35,15 +35,15 @@
 </head>
 <body>    
     
-            <div class="folium-map" id="map_e038ee95e9cc4c0d953675f758ce822a" ></div>
+            <div class="folium-map" id="map_84bbbbfff03043769ee8e21cc28bfa6a" ></div>
         
 </body>
 <script>    
     
-            var map_e038ee95e9cc4c0d953675f758ce822a = L.map(
-                "map_e038ee95e9cc4c0d953675f758ce822a",
+            var map_84bbbbfff03043769ee8e21cc28bfa6a = L.map(
+                "map_84bbbbfff03043769ee8e21cc28bfa6a",
                 {
-                    center: [52.529412, 13.125847],
+                    center: [52.515915, 13.394078],
                     crs: L.CRS.EPSG3857,
                     zoom: 10,
                     zoomControl: true,
@@ -55,375 +55,935 @@
 
         
     
-            var tile_layer_754f6aee96fa4cbaad6bc8ebe9aa00ee = L.tileLayer(
+            var tile_layer_af036ec47f864f85af70a27291079fbe = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
         
     
-            var marker_a885f99411d149d4b08ec73c53ab1837 = L.marker(
-                [48.867158, 2.327068],
-                {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
-        
-    
-            var icon_92dbdb1e84ca4ece84cd6df3d0e5fe3c = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-            );
-            marker_a885f99411d149d4b08ec73c53ab1837.setIcon(icon_92dbdb1e84ca4ece84cd6df3d0e5fe3c);
-        
-    
-            marker_a885f99411d149d4b08ec73c53ab1837.bindTooltip(
-                `<div>
-                     Day:1,Place:1, hotel, Mandarin Oriental, Paris
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_faeed623cf6e4f9ca7549e8139b20797 = L.marker(
-                [48.866249, 2.328539],
-                {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
-        
-    
-            var icon_bd4ec8a7b4f4493ca077fd6ac4694a67 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-            );
-            marker_faeed623cf6e4f9ca7549e8139b20797.setIcon(icon_bd4ec8a7b4f4493ca077fd6ac4694a67);
-        
-    
-            marker_faeed623cf6e4f9ca7549e8139b20797.bindTooltip(
-                `<div>
-                     Day:1,Place:2, food, Les Feuillants Convent
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_8ced931f39794b508b5e40e593e75891 = L.marker(
-                [48.867474, 2.329438],
-                {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
-        
-    
-            var icon_61b7355197834e729140ba8a9628b19f = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-            );
-            marker_8ced931f39794b508b5e40e593e75891.setIcon(icon_61b7355197834e729140ba8a9628b19f);
-        
-    
-            marker_8ced931f39794b508b5e40e593e75891.bindTooltip(
-                `<div>
-                     Day:1,Place:3, cultural, Colonne Vendôme
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_7773698e001047c6a91fc51cd31bf97e = L.marker(
-                [48.867298, 2.32831],
-                {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
-        
-    
-            var icon_7b532f3c56594badb88db3d2630298ef = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-            );
-            marker_7773698e001047c6a91fc51cd31bf97e.setIcon(icon_7b532f3c56594badb88db3d2630298ef);
-        
-    
-            marker_7773698e001047c6a91fc51cd31bf97e.bindTooltip(
-                `<div>
-                     Day:1,Place:4, architecture, hôtel de Villemaré
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_054ecc66865442f1b97e689a50ac172e = L.marker(
-                [48.869812, 2.322388],
-                {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
-        
-    
-            var icon_209defa0cda74911bef3a3a21224a6f5 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-            );
-            marker_054ecc66865442f1b97e689a50ac172e.setIcon(icon_209defa0cda74911bef3a3a21224a6f5);
-        
-    
-            marker_054ecc66865442f1b97e689a50ac172e.bindTooltip(
-                `<div>
-                     Day:1,Place:5, shop, Galerie de la Madeleine
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_1270a7c6fe76486da33a65783128826a = L.marker(
-                [48.867554, 2.322401],
-                {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
-        
-    
-            var icon_b23b179f205a437aacc5210f75c81bde = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-            );
-            marker_1270a7c6fe76486da33a65783128826a.setIcon(icon_b23b179f205a437aacc5210f75c81bde);
-        
-    
-            marker_1270a7c6fe76486da33a65783128826a.bindTooltip(
-                `<div>
-                     Day:1,Place:6, food, Minim's
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_a50b90ef521c4422952a3c7249d5c7e6 = L.marker(
+            var marker_ac56070626a946b882d6d25718a1f893 = L.marker(
                 [52.515915, 13.394078],
                 {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
         
     
-            var icon_f6bc0f8743154ed0a403eae1590e2e2a = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_57b1845d5c994adbb620aed492d36dde = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_a50b90ef521c4422952a3c7249d5c7e6.setIcon(icon_f6bc0f8743154ed0a403eae1590e2e2a);
+            marker_ac56070626a946b882d6d25718a1f893.setIcon(icon_57b1845d5c994adbb620aed492d36dde);
         
     
-            marker_a50b90ef521c4422952a3c7249d5c7e6.bindTooltip(
+            marker_ac56070626a946b882d6d25718a1f893.bindTooltip(
                 `<div>
-                     Day:2,Place:1, hotel, Rocco Forte Hotel De Rome Berlin
+                     Day:1,Place:1, hotel, Rocco Forte Hotel De Rome Berlin
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_a7088b3753e54d82aebbd07f36ddea5e = L.marker(
+            var marker_0640e8f2fc0e4e2ca8f3945bd13d8a9b = L.marker(
                 [52.516552, 13.403493],
                 {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
         
     
-            var icon_ff7742e2e9694cdfbe417bf305aa4ed2 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_7e062e6386954014b63d1465a73b00d3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_a7088b3753e54d82aebbd07f36ddea5e.setIcon(icon_ff7742e2e9694cdfbe417bf305aa4ed2);
+            marker_0640e8f2fc0e4e2ca8f3945bd13d8a9b.setIcon(icon_7e062e6386954014b63d1465a73b00d3);
         
     
-            marker_a7088b3753e54d82aebbd07f36ddea5e.bindTooltip(
+            marker_0640e8f2fc0e4e2ca8f3945bd13d8a9b.bindTooltip(
                 `<div>
-                     Day:2,Place:2, food, Mensa Neuer Marstall
+                     Day:1,Place:2, food, Mensa Neuer Marstall
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_3704d0fad9504b0d8685f9e39501cefc = L.marker(
-                [52.519199, 13.3836],
+            var marker_c35c6c7f5c1641fb93c3d6714f034123 = L.marker(
+                [52.503975, 13.415221],
                 {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
         
     
-            var icon_13f52df3785843db860258c2e3622f08 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_4e23575d3f104fc6b1566dd85dcf9175 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_3704d0fad9504b0d8685f9e39501cefc.setIcon(icon_13f52df3785843db860258c2e3622f08);
+            marker_c35c6c7f5c1641fb93c3d6714f034123.setIcon(icon_4e23575d3f104fc6b1566dd85dcf9175);
         
     
-            marker_3704d0fad9504b0d8685f9e39501cefc.bindTooltip(
+            marker_c35c6c7f5c1641fb93c3d6714f034123.bindTooltip(
                 `<div>
-                     Day:2,Place:3, shop, Markthalle IV
+                     Day:1,Place:3, shop, Markthalle VII
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_76f6f5f9e32e43c8b6db77dd7c89f66a = L.marker(
+            var marker_873a962f623a4a2f9a5d2f12da3958a3 = L.marker(
+                [52.494522, 13.404325],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_e3b6eea318a143428e68d5490b57e17f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_873a962f623a4a2f9a5d2f12da3958a3.setIcon(icon_e3b6eea318a143428e68d5490b57e17f);
+        
+    
+            marker_873a962f623a4a2f9a5d2f12da3958a3.bindTooltip(
+                `<div>
+                     Day:1,Place:4, sport, Baerwaldbad
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_19562a97e6fb45b19a214840db53a0d9 = L.marker(
+                [52.508099, 13.3881],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_6eb015f6912f4accbf6495cacfe55b85 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_19562a97e6fb45b19a214840db53a0d9.setIcon(icon_6eb015f6912f4accbf6495cacfe55b85);
+        
+    
+            marker_19562a97e6fb45b19a214840db53a0d9.bindTooltip(
+                `<div>
+                     Day:1,Place:5, shop, Markthalle 3
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9cebb5e07425431690362e5c6ab67be5 = L.marker(
+                [52.508587, 13.38711],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_97ffbbc0247b4a53b5004c585ea2b03a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9cebb5e07425431690362e5c6ab67be5.setIcon(icon_97ffbbc0247b4a53b5004c585ea2b03a);
+        
+    
+            marker_9cebb5e07425431690362e5c6ab67be5.bindTooltip(
+                `<div>
+                     Day:1,Place:6, food, ewerk
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e04d7899a71149398598e2a4ee2f6ec6 = L.marker(
                 [52.516487, 13.393826],
                 {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
         
     
-            var icon_61ca4eda31a94ccba463a496dd11640b = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_8bfab241d78945249d1caf253fb6247e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_76f6f5f9e32e43c8b6db77dd7c89f66a.setIcon(icon_61ca4eda31a94ccba463a496dd11640b);
+            marker_e04d7899a71149398598e2a4ee2f6ec6.setIcon(icon_8bfab241d78945249d1caf253fb6247e);
         
     
-            marker_76f6f5f9e32e43c8b6db77dd7c89f66a.bindTooltip(
+            marker_e04d7899a71149398598e2a4ee2f6ec6.bindTooltip(
                 `<div>
-                     Day:2,Place:4, cultural, Bebelplatz
+                     Day:1,Place:7, cultural, Bebelplatz
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_3c4a884778d446c8b9387f5ac4cb9358 = L.marker(
-                [52.516399, 13.3933],
+            var marker_b0799df042b64de6bff66812bfa4718b = L.marker(
+                [52.516899, 13.3961],
                 {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
         
     
-            var icon_9b9f59747eba46cabddf28489c13708c = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_b226612633b748c5b2b4a319ec047664 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_3c4a884778d446c8b9387f5ac4cb9358.setIcon(icon_9b9f59747eba46cabddf28489c13708c);
+            marker_b0799df042b64de6bff66812bfa4718b.setIcon(icon_b226612633b748c5b2b4a319ec047664);
         
     
-            marker_3c4a884778d446c8b9387f5ac4cb9358.bindTooltip(
+            marker_b0799df042b64de6bff66812bfa4718b.bindTooltip(
                 `<div>
-                     Day:2,Place:5, architecture, Alte Bibliothek
+                     Day:1,Place:8, architecture, Prinzessinnenpalais
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_67403c226e614ae78f6642c01d572e9f = L.marker(
+            var marker_991eb753ab884ba5bc304ffaae221783 = L.marker(
+                [52.5172, 13.3969],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_3caf4a7fed274bda9e6bca49018392ff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_991eb753ab884ba5bc304ffaae221783.setIcon(icon_3caf4a7fed274bda9e6bca49018392ff);
+        
+    
+            marker_991eb753ab884ba5bc304ffaae221783.bindTooltip(
+                `<div>
+                     Day:1,Place:9, architecture, Kronprinzenpalais
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_55099b5a97004de99604d1349e1b33c1 = L.marker(
                 [52.519344, 13.4025],
                 {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
         
     
-            var icon_ac3bcd88dc0d4710a20857e84b57f348 = L.AwesomeMarkers.icon(
+            var icon_0d42b553df4648ec89f619e6ac67bcea = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_55099b5a97004de99604d1349e1b33c1.setIcon(icon_0d42b553df4648ec89f619e6ac67bcea);
+        
+    
+            marker_55099b5a97004de99604d1349e1b33c1.bindTooltip(
+                `<div>
+                     Day:1,Place:10, food, Heat-Berlin
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2d36bd1671e64e1f842543eaf61bbf40 = L.marker(
+                [52.523018, 13.388484],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_d7466fd1dbfe4814afec3e78e8f1cb3c = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_67403c226e614ae78f6642c01d572e9f.setIcon(icon_ac3bcd88dc0d4710a20857e84b57f348);
+            marker_2d36bd1671e64e1f842543eaf61bbf40.setIcon(icon_d7466fd1dbfe4814afec3e78e8f1cb3c);
         
     
-            marker_67403c226e614ae78f6642c01d572e9f.bindTooltip(
+            marker_2d36bd1671e64e1f842543eaf61bbf40.bindTooltip(
                 `<div>
-                     Day:2,Place:6, food, Heat-Berlin
+                     Day:2,Place:1, food, Friedrichstadt-Palast
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_d5347b5a816642c290e359efb92e59c9 = L.marker(
-                [51.529412, -0.125847],
+            var marker_e6d1956b65fb4ab5b40457945173c92f = L.marker(
+                [52.517906, 13.395537],
                 {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
         
     
-            var icon_60a4c695b59d487cb49ef8dff97bf16b = L.AwesomeMarkers.icon(
+            var icon_4e3841eb4231462f8cbf19eb94d7c568 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e6d1956b65fb4ab5b40457945173c92f.setIcon(icon_4e3841eb4231462f8cbf19eb94d7c568);
+        
+    
+            marker_e6d1956b65fb4ab5b40457945173c92f.bindTooltip(
+                `<div>
+                     Day:2,Place:2, architecture, New Guard House
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_890c041f9ed2425389f02264c2f188be = L.marker(
+                [52.517593, 13.393472],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_90ee88d2b69a455abf7249834fb5e2d0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_890c041f9ed2425389f02264c2f188be.setIcon(icon_90ee88d2b69a455abf7249834fb5e2d0);
+        
+    
+            marker_890c041f9ed2425389f02264c2f188be.bindTooltip(
+                `<div>
+                     Day:2,Place:3, cultural, Wilhelm von Humboldt
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fb88d5d65aff4262801a4321777de01d = L.marker(
+                [52.517254, 13.392743],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_a064419cd51b4ad3b9f56dd2f8a6ffcb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_fb88d5d65aff4262801a4321777de01d.setIcon(icon_a064419cd51b4ad3b9f56dd2f8a6ffcb);
+        
+    
+            marker_fb88d5d65aff4262801a4321777de01d.bindTooltip(
+                `<div>
+                     Day:2,Place:4, cultural, Frederick II of Prussia
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ec897829cebe4b6b8c92938112ba9b84 = L.marker(
+                [52.522987, 13.382868],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_29f44a168d1542098af2e70001b3f79e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ec897829cebe4b6b8c92938112ba9b84.setIcon(icon_29f44a168d1542098af2e70001b3f79e);
+        
+    
+            marker_ec897829cebe4b6b8c92938112ba9b84.bindTooltip(
+                `<div>
+                     Day:2,Place:5, food, Backshop Cafe am Deutschen Theater
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_32fa0052e92c4e86a79a920e9e904469 = L.marker(
+                [52.517815, 13.393262],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_47e6be07af064db683864bc66b80baf5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_32fa0052e92c4e86a79a920e9e904469.setIcon(icon_47e6be07af064db683864bc66b80baf5);
+        
+    
+            marker_32fa0052e92c4e86a79a920e9e904469.bindTooltip(
+                `<div>
+                     Day:2,Place:6, cultural, Theodor Mommsen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2fe5d10a7bea439a8f237fc43202bc5e = L.marker(
+                [52.517815, 13.393262],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_6f8ed0a95cfc4eb78f476059fcb06630 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2fe5d10a7bea439a8f237fc43202bc5e.setIcon(icon_6f8ed0a95cfc4eb78f476059fcb06630);
+        
+    
+            marker_2fe5d10a7bea439a8f237fc43202bc5e.bindTooltip(
+                `<div>
+                     Day:2,Place:7, historic, Theodor Mommsen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c322bc8ab53543468cba517d62b02969 = L.marker(
+                [52.532089, 13.396922],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_e69947b66c754505a09866c76238dc12 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c322bc8ab53543468cba517d62b02969.setIcon(icon_e69947b66c754505a09866c76238dc12);
+        
+    
+            marker_c322bc8ab53543468cba517d62b02969.bindTooltip(
+                `<div>
+                     Day:2,Place:8, shop, Ackerhalle
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cdaf4f165e194b6bb1b693344214140b = L.marker(
+                [52.523933, 13.402408],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_6842e79c27d84719be35ac6b9e30c886 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_cdaf4f165e194b6bb1b693344214140b.setIcon(icon_6842e79c27d84719be35ac6b9e30c886);
+        
+    
+            marker_cdaf4f165e194b6bb1b693344214140b.bindTooltip(
+                `<div>
+                     Day:2,Place:9, food, Hackescher Hof
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9bec1577c526464cafa005e2425fe680 = L.marker(
+                [52.520859, 13.409364],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_68feb0cc2e8144d9a64dd157b84ac88b = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
             );
-            marker_d5347b5a816642c290e359efb92e59c9.setIcon(icon_60a4c695b59d487cb49ef8dff97bf16b);
+            marker_9bec1577c526464cafa005e2425fe680.setIcon(icon_68feb0cc2e8144d9a64dd157b84ac88b);
         
     
-            marker_d5347b5a816642c290e359efb92e59c9.bindTooltip(
+            marker_9bec1577c526464cafa005e2425fe680.bindTooltip(
                 `<div>
-                     Day:3,Place:1, hotel, St. Pancras Renaissance Hotel London
+                     Day:3,Place:1, food, 203 Bar im Fernsehturm
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_61c6f548bfca4ba48e51bcae993a9d5d = L.marker(
-                [51.530228, -0.12801],
+            var marker_936aaff86fc5470ab4fb90aee70bead1 = L.marker(
+                [52.529545, 13.39354],
                 {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
         
     
-            var icon_7b1062353a0d493ebf02710dec975272 = L.AwesomeMarkers.icon(
+            var icon_c73dbff78d494d6dbda18cc09c4e3bcf = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
             );
-            marker_61c6f548bfca4ba48e51bcae993a9d5d.setIcon(icon_7b1062353a0d493ebf02710dec975272);
+            marker_936aaff86fc5470ab4fb90aee70bead1.setIcon(icon_c73dbff78d494d6dbda18cc09c4e3bcf);
         
     
-            marker_61c6f548bfca4ba48e51bcae993a9d5d.bindTooltip(
+            marker_936aaff86fc5470ab4fb90aee70bead1.bindTooltip(
                 `<div>
-                     Day:3,Place:2, food, British Library restaurant
+                     Day:3,Place:2, sport, Stadtbad Mitte
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_27f06f247e4d4897bdbc5c26bff62dff = L.marker(
-                [51.529598, -0.128129],
+            var marker_2615e0c501724907b0a3b9400819c582 = L.marker(
+                [52.522987, 13.382868],
                 {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
         
     
-            var icon_fc7a813b7d5b40859d25836970274f73 = L.AwesomeMarkers.icon(
+            var icon_501129647aac4fe39764300201d54634 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
             );
-            marker_27f06f247e4d4897bdbc5c26bff62dff.setIcon(icon_fc7a813b7d5b40859d25836970274f73);
+            marker_2615e0c501724907b0a3b9400819c582.setIcon(icon_501129647aac4fe39764300201d54634);
         
     
-            marker_27f06f247e4d4897bdbc5c26bff62dff.bindTooltip(
+            marker_2615e0c501724907b0a3b9400819c582.bindTooltip(
                 `<div>
-                     Day:3,Place:3, cultural, British Library Exhibition Space
+                     Day:3,Place:3, shop, Backshop Cafe am Deutschen Theater
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_0e64fab637794017ab4e896a8701e23a = L.marker(
-                [51.523998, -0.124],
+            var marker_4bb874abf2de4918a54567e88d717f0c = L.marker(
+                [52.519199, 13.3836],
                 {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
         
     
-            var icon_15e3c64a83d742538fd305443dc525f4 = L.AwesomeMarkers.icon(
+            var icon_25e5662267d4498d9e3829cb0c38a8a2 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
             );
-            marker_0e64fab637794017ab4e896a8701e23a.setIcon(icon_15e3c64a83d742538fd305443dc525f4);
+            marker_4bb874abf2de4918a54567e88d717f0c.setIcon(icon_25e5662267d4498d9e3829cb0c38a8a2);
         
     
-            marker_0e64fab637794017ab4e896a8701e23a.bindTooltip(
+            marker_4bb874abf2de4918a54567e88d717f0c.bindTooltip(
                 `<div>
-                     Day:3,Place:4, shop, Brunswick Centre
+                     Day:3,Place:4, shop, Markthalle IV
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_ba62cbcd5885446b92e0102a7370fff1 = L.marker(
-                [51.528999, -0.1255],
+            var marker_d26963d8a2744743a89b133abe0a44c2 = L.marker(
+                [52.518013, 13.407163],
                 {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
         
     
-            var icon_6cf329fd4c5f4c0ea6371cb2b63b5c0b = L.AwesomeMarkers.icon(
+            var icon_766386fcff0a47989d5f8233ff245b48 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
             );
-            marker_ba62cbcd5885446b92e0102a7370fff1.setIcon(icon_6cf329fd4c5f4c0ea6371cb2b63b5c0b);
+            marker_d26963d8a2744743a89b133abe0a44c2.setIcon(icon_766386fcff0a47989d5f8233ff245b48);
         
     
-            marker_ba62cbcd5885446b92e0102a7370fff1.bindTooltip(
+            marker_d26963d8a2744743a89b133abe0a44c2.bindTooltip(
                 `<div>
-                     Day:3,Place:5, architecture, Camden Town Hall
+                     Day:3,Place:5, food, Rathaus Cafe
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_dff75b2fbcde4e49af74c8a610e7456c = L.marker(
-                [51.528236, -0.128996],
+            var marker_e2b806c7a56440d1a578de90839563c1 = L.marker(
+                [52.52177, 13.39538],
                 {}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
         
     
-            var icon_93447edb960c4bb3abcccff78521032c = L.AwesomeMarkers.icon(
+            var icon_f324e5edb0d94a23a621f68ce2f4c0aa = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
             );
-            marker_dff75b2fbcde4e49af74c8a610e7456c.setIcon(icon_93447edb960c4bb3abcccff78521032c);
+            marker_e2b806c7a56440d1a578de90839563c1.setIcon(icon_f324e5edb0d94a23a621f68ce2f4c0aa);
         
     
-            marker_dff75b2fbcde4e49af74c8a610e7456c.bindTooltip(
+            marker_e2b806c7a56440d1a578de90839563c1.bindTooltip(
                 `<div>
-                     Day:3,Place:6, food, The Rocket
+                     Day:3,Place:6, historic, Museum Island
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var poly_line_f630da17569042d48f3e21bbbe350c6e = L.polyline(
-                [[48.867158, 2.327068], [48.866249, 2.328539], [48.867474, 2.329438], [48.867298, 2.32831], [48.869812, 2.322388], [48.867554, 2.322401], [52.515915, 13.394078], [52.516552, 13.403493], [52.519199, 13.3836], [52.516487, 13.393826], [52.516399, 13.3933], [52.519344, 13.4025], [51.529412, -0.125847], [51.530228, -0.12801], [51.529598, -0.128129], [51.523998, -0.124], [51.528999, -0.1255], [51.528236, -0.128996]],
+            var marker_3eaccaa12f2142a8ac30009c91724efa = L.marker(
+                [52.513638, 13.392719],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_c1f03ec74aca4010b5de9161ea7f8973 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_3eaccaa12f2142a8ac30009c91724efa.setIcon(icon_c1f03ec74aca4010b5de9161ea7f8973);
+        
+    
+            marker_3eaccaa12f2142a8ac30009c91724efa.bindTooltip(
+                `<div>
+                     Day:3,Place:7, cultural, Gendarmenmarkt
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1ae0c0cba8a54e90953e0f94750eb954 = L.marker(
+                [52.5144, 13.3955],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_a7ccd7daa8224b139d77b791c38ded61 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_1ae0c0cba8a54e90953e0f94750eb954.setIcon(icon_a7ccd7daa8224b139d77b791c38ded61);
+        
+    
+            marker_1ae0c0cba8a54e90953e0f94750eb954.bindTooltip(
+                `<div>
+                     Day:3,Place:8, architecture, Mendelssohn Palace
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_797e23d3b4b64c0d9c5f8e0651469264 = L.marker(
+                [52.513332, 13.405833],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_2f5365668c1d424aaddb4205aa50367b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_797e23d3b4b64c0d9c5f8e0651469264.setIcon(icon_2f5365668c1d424aaddb4205aa50367b);
+        
+    
+            marker_797e23d3b4b64c0d9c5f8e0651469264.bindTooltip(
+                `<div>
+                     Day:3,Place:9, food, Großgaststätte Ahornblatt
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1b69fd4c2f3045b4867f7243da8f92a7 = L.marker(
+                [52.51564, 13.406953],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_8c8e6bacb7d94615b0b28be6f8764729 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_1b69fd4c2f3045b4867f7243da8f92a7.setIcon(icon_8c8e6bacb7d94615b0b28be6f8764729);
+        
+    
+            marker_1b69fd4c2f3045b4867f7243da8f92a7.bindTooltip(
+                `<div>
+                     Day:4,Place:1, food, Ephraim's
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_11dea286900e457ab00a714461986383 = L.marker(
+                [52.513638, 13.392648],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_db76424dc5e543f9bde80b5e0280f1f2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_11dea286900e457ab00a714461986383.setIcon(icon_db76424dc5e543f9bde80b5e0280f1f2);
+        
+    
+            marker_11dea286900e457ab00a714461986383.bindTooltip(
+                `<div>
+                     Day:4,Place:2, cultural, Schiller Monument
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5b9ca9c0015b4069b9d336e07df046f2 = L.marker(
+                [52.513638, 13.392648],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_9b4d77bfcff04184945394d44ecb52d3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_5b9ca9c0015b4069b9d336e07df046f2.setIcon(icon_9b4d77bfcff04184945394d44ecb52d3);
+        
+    
+            marker_5b9ca9c0015b4069b9d336e07df046f2.bindTooltip(
+                `<div>
+                     Day:4,Place:3, historic, Schiller Monument
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2100091ad1d44db2a6f152f620b7743a = L.marker(
+                [52.516399, 13.3933],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_81564514af094a669ebb42f90e0fafaa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_2100091ad1d44db2a6f152f620b7743a.setIcon(icon_81564514af094a669ebb42f90e0fafaa);
+        
+    
+            marker_2100091ad1d44db2a6f152f620b7743a.bindTooltip(
+                `<div>
+                     Day:4,Place:4, architecture, Alte Bibliothek
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dbf02e48c23d4e7989ee76f69d30baae = L.marker(
+                [52.518829, 13.408701],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_d4b988dc46254b0b8569f0dc0a0b41ef = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_dbf02e48c23d4e7989ee76f69d30baae.setIcon(icon_d4b988dc46254b0b8569f0dc0a0b41ef);
+        
+    
+            marker_dbf02e48c23d4e7989ee76f69d30baae.bindTooltip(
+                `<div>
+                     Day:4,Place:5, food, Kantine im Roten Rathaus
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1c1e8856606a4eb188fb7ffe2d665189 = L.marker(
+                [52.518101, 13.3933],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_60caec71bded408a8f105a812f40b96d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_1c1e8856606a4eb188fb7ffe2d665189.setIcon(icon_60caec71bded408a8f105a812f40b96d);
+        
+    
+            marker_1c1e8856606a4eb188fb7ffe2d665189.bindTooltip(
+                `<div>
+                     Day:4,Place:6, architecture, Prince Henry Palace
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7811dde886f74932b422b0b21aa18083 = L.marker(
+                [52.516899, 13.3928],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_9484cc7c1f5a4940b9c6c9fe11f3d212 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_7811dde886f74932b422b0b21aa18083.setIcon(icon_9484cc7c1f5a4940b9c6c9fe11f3d212);
+        
+    
+            marker_7811dde886f74932b422b0b21aa18083.bindTooltip(
+                `<div>
+                     Day:4,Place:7, architecture, Altes Palais
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_883c1835a13049b0841d91fcb4b468fb = L.marker(
+                [52.517254, 13.392743],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_2bf2eb958a244596ad301d630f48e777 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_883c1835a13049b0841d91fcb4b468fb.setIcon(icon_2bf2eb958a244596ad301d630f48e777);
+        
+    
+            marker_883c1835a13049b0841d91fcb4b468fb.bindTooltip(
+                `<div>
+                     Day:4,Place:8, historic, Frederick II of Prussia
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_210d1912c1854a809332b5585bbe5d2b = L.marker(
+                [52.520824, 13.409421],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_89d7e5da11cd4bdaa768f9f4e1a30421 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_210d1912c1854a809332b5585bbe5d2b.setIcon(icon_89d7e5da11cd4bdaa768f9f4e1a30421);
+        
+    
+            marker_210d1912c1854a809332b5585bbe5d2b.bindTooltip(
+                `<div>
+                     Day:4,Place:9, food, Fernsehturm Berlin
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_feb7f8a39baa4738b9f40e4cb1564f4e = L.marker(
+                [52.520893, 13.409429],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_33e780547505409fb8bb3ae983b806bd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_feb7f8a39baa4738b9f40e4cb1564f4e.setIcon(icon_33e780547505409fb8bb3ae983b806bd);
+        
+    
+            marker_feb7f8a39baa4738b9f40e4cb1564f4e.bindTooltip(
+                `<div>
+                     Day:5,Place:1, food, Sphere Restaurant im Berliner Fernsehturm
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_726e746b4e8c45acb8a4ed0802393240 = L.marker(
+                [52.516705, 13.394738],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_8fb2bf8b74a94fc5a79947fa3792d8ed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_726e746b4e8c45acb8a4ed0802393240.setIcon(icon_8fb2bf8b74a94fc5a79947fa3792d8ed);
+        
+    
+            marker_726e746b4e8c45acb8a4ed0802393240.bindTooltip(
+                `<div>
+                     Day:5,Place:2, cultural, Berlin State Opera
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3fc615020bc042a090f6cffdb33da107 = L.marker(
+                [52.516399, 13.4],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_010e8e4a2f834cc09144db3333fe90d3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_3fc615020bc042a090f6cffdb33da107.setIcon(icon_010e8e4a2f834cc09144db3333fe90d3);
+        
+    
+            marker_3fc615020bc042a090f6cffdb33da107.bindTooltip(
+                `<div>
+                     Day:5,Place:3, historic, National Kaiser Wilhelm Monument
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c03ae19a76aa40989f75374b88a2a7d4 = L.marker(
+                [52.515884, 13.397501],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_5db78cc360864ea7aa65f9f22a61ebf9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_c03ae19a76aa40989f75374b88a2a7d4.setIcon(icon_5db78cc360864ea7aa65f9f22a61ebf9);
+        
+    
+            marker_c03ae19a76aa40989f75374b88a2a7d4.bindTooltip(
+                `<div>
+                     Day:5,Place:4, cultural, Friedrichswerdersche Kirche
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_20fe863ceb464227b07ffed8ce3df210 = L.marker(
+                [52.517452, 13.413775],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_ba7f2b9867df4fc8a23760f0a5d35055 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_20fe863ceb464227b07ffed8ce3df210.setIcon(icon_ba7f2b9867df4fc8a23760f0a5d35055);
+        
+    
+            marker_20fe863ceb464227b07ffed8ce3df210.bindTooltip(
+                `<div>
+                     Day:5,Place:5, food, Zur Letzten Instanz
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_636d44a789c04fceac859c36069c311e = L.marker(
+                [52.517849, 13.39373],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_155fb97dff114aa885a2dc6e43d8c1ed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_636d44a789c04fceac859c36069c311e.setIcon(icon_155fb97dff114aa885a2dc6e43d8c1ed);
+        
+    
+            marker_636d44a789c04fceac859c36069c311e.bindTooltip(
+                `<div>
+                     Day:5,Place:6, cultural, Hermann von Helmholtz
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_758f1fd16c4643f6aeb5298181ce3506 = L.marker(
+                [52.517799, 13.3917],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_d2609f4b0434432680d38b2831cbd977 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_758f1fd16c4643f6aeb5298181ce3506.setIcon(icon_d2609f4b0434432680d38b2831cbd977);
+        
+    
+            marker_758f1fd16c4643f6aeb5298181ce3506.bindTooltip(
+                `<div>
+                     Day:5,Place:7, architecture, State Library of Berlin (Haus Unter den Linden)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a1af6904699c4f05b99b758a045f3e52 = L.marker(
+                [52.516899, 13.3921],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_2ab32c98a9f243fdb1139ad059660f84 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_a1af6904699c4f05b99b758a045f3e52.setIcon(icon_2ab32c98a9f243fdb1139ad059660f84);
+        
+    
+            marker_a1af6904699c4f05b99b758a045f3e52.bindTooltip(
+                `<div>
+                     Day:5,Place:8, architecture, Gouverneurshaus
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_adeb2da74e7e41fb97400ed9e17e5f2c = L.marker(
+                [52.514076, 13.415841],
+                {}
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
+        
+    
+            var icon_9658d17bf82e4332b99123f58e6fa0b6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_adeb2da74e7e41fb97400ed9e17e5f2c.setIcon(icon_9658d17bf82e4332b99123f58e6fa0b6);
+        
+    
+            marker_adeb2da74e7e41fb97400ed9e17e5f2c.bindTooltip(
+                `<div>
+                     Day:5,Place:9, food, Marinehaus
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_ff9ef55df40e44fa83265fa4b5c48c73 = L.polyline(
+                [[52.515915, 13.394078], [52.516552, 13.403493], [52.503975, 13.415221], [52.494522, 13.404325], [52.508099, 13.3881], [52.508587, 13.38711], [52.516487, 13.393826], [52.516899, 13.3961], [52.5172, 13.3969], [52.519344, 13.4025], [52.523018, 13.388484], [52.517906, 13.395537], [52.517593, 13.393472], [52.517254, 13.392743], [52.522987, 13.382868], [52.517815, 13.393262], [52.517815, 13.393262], [52.532089, 13.396922], [52.523933, 13.402408], [52.520859, 13.409364], [52.529545, 13.39354], [52.522987, 13.382868], [52.519199, 13.3836], [52.518013, 13.407163], [52.52177, 13.39538], [52.513638, 13.392719], [52.5144, 13.3955], [52.513332, 13.405833], [52.51564, 13.406953], [52.513638, 13.392648], [52.513638, 13.392648], [52.516399, 13.3933], [52.518829, 13.408701], [52.518101, 13.3933], [52.516899, 13.3928], [52.517254, 13.392743], [52.520824, 13.409421], [52.520893, 13.409429], [52.516705, 13.394738], [52.516399, 13.4], [52.515884, 13.397501], [52.517452, 13.413775], [52.517849, 13.39373], [52.517799, 13.3917], [52.516899, 13.3921], [52.514076, 13.415841]],
                 {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
-            ).addTo(map_e038ee95e9cc4c0d953675f758ce822a);
+            ).addTo(map_84bbbbfff03043769ee8e21cc28bfa6a);
         
 </script>

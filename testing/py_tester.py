@@ -12,24 +12,25 @@ Build Trips
 '''
 consts = {
 
-        'locations': ['paris', 'berlin','london'],  # 1
+        'locations': ['berlin'],  # 1
         'trip_mode': 'focused_trip',  # 2
-        'food_importance': 2,  # 3
+        'food_importance': 3,  # 3
         'shop_importance': 1,  # 4
-        'days_count': 3,  # 5
-        'places_per_day': 4,  # 6
+        'days_count': 5,  # 5
+        'places_per_day': 5,  # 6
         'shop_dis': False,  # 7
-        'places_preferences': {'HIS': 5, 'CUL': 10, 'SPO': 2, 'ARC': 10}  # 8
+        'places_preferences':  {"HIS": 5, "CUL": 10, "SPO": 2, "ARC": 10}  # 8
     }
-# trip = search_engine.plan_trip(constraints=consts)
+trip = search_engine.plan_trip(constraints=consts)
 # print(trip)
+# with open('samples/london_trip_data.pkl','wb') as data:
+#     pickle.dump(trip,data,pickle.HIGHEST_PROTOCOL)
 
 
-
-with open('samples/paris_berlin_london_trip_data.pkl', 'rb') as input:
-    l_trip = pickle.load(input)
-    trp = plan_itinerary_schedule(l_trip,places_per_day=4,food_count=2,is_shopping_last=False,shop_count=1,n_days=3)
-    trp1 = plan_itinerary_schedule_clusters(l_trip)
+# with open('samples/london_trip_data.pkl', 'rb') as input:
+#     l_trip = pickle.load(input)
+#     trp = plan_itinerary_schedule(l_trip,places_per_day=5,food_count=3,is_shopping_last=False,shop_count=1,n_days=6)
+#     trp1 = plan_itinerary_schedule_clusters(l_trip)
 
 
 
@@ -58,5 +59,3 @@ booking_dict = {
 # res6 = search_engine.get('PLACES', 'LOCATION', {'name': 'england'})
 # print(res6)
 
-# ll = [1,2,3,4,5,6,7,8,9,9]
-# print(ll[2:2+5:1])

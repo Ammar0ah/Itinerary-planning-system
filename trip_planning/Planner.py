@@ -112,19 +112,10 @@ class Planner:
 
     # make schedule
     def split_trip_on_days(self, path, poi_per_day, n_days):
-        places = []
-        idx = 0
-        for i, place in enumerate(path):
-            places.append(place)
-            if len(places) >= poi_per_day:
-                self.days.append(Day(idx, deepcopy(places)))
-                idx +=1
-                places = []
-        # for items less than 5
-        if places:
-            self.days.append(Day(idx, places))
-            idx+=1
-            places = []
+        places_lists = np.array_split(path,n_days)
+        for i,place_list in enumerate(places_lists):
+            self.days.append(Day(i,place_list.tolist()))
+
         return self.days
 
     # insert restaurant in the day at index
@@ -144,7 +135,6 @@ class Planner:
             self.days = self.split_trip_on_days(self.path, places_per_day, n_days)
         else:
             self.days = self.split_trip_on_days(self.path, places_per_day + shop_count, n_days)
-
         for i, day in enumerate(self.days):
             days_items = day.items
 

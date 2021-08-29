@@ -104,7 +104,12 @@ class SearchEngine:
                         for place in places:
                             trip_components.append(Item(location,str(self.OptionalPlacesKinds[place_type].value[0]), place))
                         trip_data[location] = trip_components
+
+                        # if len(trip_components) % 2 != 0:
+                        #     trip_components = trip_components[:-1]
+                        #     trip_data[location] = trip_components
             return trip_data
+
         else:
             raise ValueError('cannot collect trip components without specifying kinds!')
 
@@ -124,6 +129,7 @@ class SearchEngine:
         return jsn
 
     def plan_trip(self, constraints: dict):
+
         trip_data = self._collect_trip_components(locations=constraints['locations'],
                                                   trip_mode=constraints['trip_mode'],
                                                   food_importance=constraints['food_importance'],

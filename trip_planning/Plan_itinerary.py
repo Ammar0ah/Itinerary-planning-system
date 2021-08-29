@@ -39,7 +39,8 @@ colors = [
 # ic(list(items.values()))
 
 def plot_path(trip,name):
-    m = folium.Map(location=[52.529412, 13.125847])
+    loc = trip.days[0].items[0].coordinate
+    m = folium.Map(location=[loc['lat'], loc['lon']])
     path = []
     for i,day in enumerate(trip.days):
         path.extend(day.items)
@@ -63,7 +64,6 @@ def plan_itinerary_schedule(items_dict: dict, places_per_day, food_count, is_sho
 
     if places_per_day > food_count:
         for value in items_dict.values():
-            print(value)
             planner = Planner(value, shopping_last=is_shopping_last)
             optimal_route, optimal_cost, path = planner.plan_two_opt(iterations=5)
             full_plan_city = planner.plan_itinerary(places_per_day, food_count,shop_count,n_days=n_days)

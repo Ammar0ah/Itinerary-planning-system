@@ -5,91 +5,17 @@
                 "day_index": 1,
                 "items": [
                     {
-                        "item_id": "380965",
-                        "item_type": "hotel",
-                        "type": 2,
-                        "distance": 0,
-                        "name": "Mandarin Oriental, Paris",
-                        "city": "paris",
-                        "coordinate": {
-                            "lat": 48.867158,
-                            "lon": 2.327068
-                        },
-                        "rate": "9.0"
-                    },
-                    {
-                        "item_id": "N1677082793",
-                        "item_type": "food",
-                        "type": 1,
-                        "distance": 147.79573387,
-                        "name": "Les Feuillants Convent",
-                        "city": "paris",
-                        "coordinate": {
-                            "lat": 48.866249,
-                            "lon": 2.328539
-                        },
-                        "rate": "7"
-                    },
-                    {
-                        "item_id": "Q3146004",
-                        "item_type": "architecture",
-                        "type": 1,
-                        "distance": 92.47890225,
-                        "name": "h\u00f4tel de Villemar\u00e9",
-                        "city": "paris",
-                        "coordinate": {
-                            "lat": 48.867298,
-                            "lon": 2.32831
-                        },
-                        "rate": "7"
-                    },
-                    {
-                        "item_id": "W32876070",
-                        "item_type": "shop",
-                        "type": 1,
-                        "distance": 452.72763322,
-                        "name": "Galerie de la Madeleine",
-                        "city": "paris",
-                        "coordinate": {
-                            "lat": 48.869812,
-                            "lon": 2.322388
-                        },
-                        "rate": "7"
-                    },
-                    {
-                        "item_id": "W227762241",
-                        "item_type": "cultural",
-                        "type": 1,
-                        "distance": 177.37270156,
-                        "name": "Colonne Vend\u00f4me",
-                        "city": "paris",
-                        "coordinate": {
-                            "lat": 48.867474,
-                            "lon": 2.329438
-                        },
-                        "rate": "7"
-                    },
-                    {
-                        "item_id": "N3980577963",
-                        "item_type": "food",
-                        "type": 1,
-                        "distance": 345.18104673,
-                        "name": "Minim's",
-                        "city": "paris",
-                        "coordinate": {
-                            "lat": 48.867554,
-                            "lon": 2.322401
-                        },
-                        "rate": "7"
-                    }
-                ]
-            },
-            {
-                "day_index": 2,
-                "items": [
-                    {
                         "item_id": "247869",
-                        "item_type": "hotel",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 2,
                         "distance": 0,
                         "name": "Rocco Forte Hotel De Rome Berlin",
@@ -102,7 +28,16 @@
                     },
                     {
                         "item_id": "N6121773112",
-                        "item_type": "food",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 1,
                         "distance": 643.08462955,
                         "name": "Mensa Neuer Marstall",
@@ -114,34 +49,105 @@
                         "rate": "7"
                     },
                     {
-                        "item_id": "Q1901032",
-                        "item_type": "shop",
+                        "item_id": "W239425912",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 1,
-                        "distance": 799.71410207,
-                        "name": "Markthalle IV",
+                        "distance": 1956.02602317,
+                        "name": "Markthalle VII",
                         "city": "berlin",
                         "coordinate": {
-                            "lat": 52.519199,
-                            "lon": 13.3836
+                            "lat": 52.503975,
+                            "lon": 13.415221
                         },
                         "rate": "7"
                     },
                     {
-                        "item_id": "Q435399",
-                        "item_type": "architecture",
+                        "item_id": "N312699190",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 1,
-                        "distance": 75.51224782,
-                        "name": "Alte Bibliothek",
+                        "distance": 2480.2390813,
+                        "name": "Baerwaldbad",
                         "city": "berlin",
                         "coordinate": {
-                            "lat": 52.516399,
-                            "lon": 13.3933
+                            "lat": 52.494522,
+                            "lon": 13.404325
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q1901029",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 959.67517436,
+                        "name": "Markthalle 3",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.508099,
+                            "lon": 13.3881
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "W48118905",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 942.56420796,
+                        "name": "ewerk",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.508587,
+                            "lon": 13.38711
                         },
                         "rate": "7"
                     },
                     {
                         "item_id": "W205728152",
-                        "item_type": "cultural",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 1,
                         "distance": 65.92301116,
                         "name": "Bebelplatz",
@@ -153,8 +159,61 @@
                         "rate": "7"
                     },
                     {
+                        "item_id": "Q2110747",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 175.65632056,
+                        "name": "Prinzessinnenpalais",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.516899,
+                            "lon": 13.3961
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q530930",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 239.05185196,
+                        "name": "Kronprinzenpalais",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.5172,
+                            "lon": 13.3969
+                        },
+                        "rate": "7"
+                    },
+                    {
                         "item_id": "N1433120469",
-                        "item_type": "food",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 1,
                         "distance": 687.33563633,
                         "name": "Heat-Berlin",
@@ -168,83 +227,812 @@
                 ]
             },
             {
+                "day_index": 2,
+                "items": [
+                    {
+                        "item_id": "N622642560",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 876.93944246,
+                        "name": "Friedrichstadt-Palast",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.523018,
+                            "lon": 13.388484
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "W24240381",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 242.5321005,
+                        "name": "New Guard House",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.517906,
+                            "lon": 13.395537
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N437319063",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 191.3880239,
+                        "name": "Wilhelm von Humboldt",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.517593,
+                            "lon": 13.393472
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N262455591",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 174.29112727,
+                        "name": "Frederick II of Prussia",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.517254,
+                            "lon": 13.392743
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N1714250170",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 1094.58277933,
+                        "name": "Backshop Cafe am Deutschen Theater",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.522987,
+                            "lon": 13.382868
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N3058015348",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 218.46009969,
+                        "name": "Theodor Mommsen",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.517815,
+                            "lon": 13.393262
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N3058015348",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 218.46009969,
+                        "name": "Theodor Mommsen",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.517815,
+                            "lon": 13.393262
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "W105154993",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 1809.95498904,
+                        "name": "Ackerhalle",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.532089,
+                            "lon": 13.396922
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N615149024",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 1056.2265792,
+                        "name": "Hackescher Hof",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.523933,
+                            "lon": 13.402408
+                        },
+                        "rate": "7"
+                    }
+                ]
+            },
+            {
                 "day_index": 3,
                 "items": [
                     {
-                        "item_id": "360456",
-                        "item_type": "hotel",
-                        "type": 2,
-                        "distance": 0,
-                        "name": "St. Pancras Renaissance Hotel London",
-                        "city": "london",
-                        "coordinate": {
-                            "lat": 51.529412,
-                            "lon": -0.125847
-                        },
-                        "rate": "8.6"
-                    },
-                    {
-                        "item_id": "N1980151259",
-                        "item_type": "food",
+                        "item_id": "N4948143723",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 1,
-                        "distance": 175.32889382,
-                        "name": "British Library restaurant",
-                        "city": "london",
+                        "distance": 1174.46689726,
+                        "name": "203 Bar im Fernsehturm",
+                        "city": "berlin",
                         "coordinate": {
-                            "lat": 51.530228,
-                            "lon": -0.12801
+                            "lat": 52.520859,
+                            "lon": 13.409364
                         },
                         "rate": "7"
                     },
                     {
-                        "item_id": "N2617232245",
-                        "item_type": "cultural",
+                        "item_id": "R5758790",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 1,
-                        "distance": 159.74438573,
-                        "name": "British Library Exhibition Space",
-                        "city": "london",
+                        "distance": 1517.02382891,
+                        "name": "Stadtbad Mitte",
+                        "city": "berlin",
                         "coordinate": {
-                            "lat": 51.529598,
-                            "lon": -0.128129
+                            "lat": 52.529545,
+                            "lon": 13.39354
                         },
                         "rate": "7"
                     },
                     {
-                        "item_id": "Q5025822",
-                        "item_type": "architecture",
+                        "item_id": "N1714250170",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 1,
-                        "distance": 51.77868721,
-                        "name": "Camden Town Hall",
-                        "city": "london",
+                        "distance": 1094.58277933,
+                        "name": "Backshop Cafe am Deutschen Theater",
+                        "city": "berlin",
                         "coordinate": {
-                            "lat": 51.528999,
-                            "lon": -0.1255
+                            "lat": 52.522987,
+                            "lon": 13.382868
                         },
                         "rate": "7"
                     },
                     {
-                        "item_id": "Q4979489",
-                        "item_type": "shop",
+                        "item_id": "Q1901032",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 1,
-                        "distance": 615.62265942,
-                        "name": "Brunswick Centre",
-                        "city": "london",
+                        "distance": 799.71410207,
+                        "name": "Markthalle IV",
+                        "city": "berlin",
                         "coordinate": {
-                            "lat": 51.523998,
-                            "lon": -0.124
+                            "lat": 52.519199,
+                            "lon": 13.3836
                         },
                         "rate": "7"
                     },
                     {
-                        "item_id": "W132319674",
-                        "item_type": "food",
+                        "item_id": "N89275075",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 1,
-                        "distance": 254.69483031,
-                        "name": "The Rocket",
-                        "city": "london",
+                        "distance": 918.37882749,
+                        "name": "Rathaus Cafe",
+                        "city": "berlin",
                         "coordinate": {
-                            "lat": 51.528236,
-                            "lon": -0.128996
+                            "lat": 52.518013,
+                            "lon": 13.407163
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q151963",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 657.49518549,
+                        "name": "Museum Island",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.52177,
+                            "lon": 13.39538
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "R3573535",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 269.61127874,
+                        "name": "Gendarmenmarkt",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.513638,
+                            "lon": 13.392719
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q806775",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 194.26754719,
+                        "name": "Mendelssohn Palace",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.5144,
+                            "lon": 13.3955
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q869943",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 848.17553957,
+                        "name": "Gro\u00dfgastst\u00e4tte Ahornblatt",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.513332,
+                            "lon": 13.405833
+                        },
+                        "rate": "7"
+                    }
+                ]
+            },
+            {
+                "day_index": 4,
+                "items": [
+                    {
+                        "item_id": "N1244644982",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 874.53110479,
+                        "name": "Ephraim's",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.51564,
+                            "lon": 13.406953
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N262457570",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 271.5561125,
+                        "name": "Schiller Monument",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.513638,
+                            "lon": 13.392648
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N262457570",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 271.5561125,
+                        "name": "Schiller Monument",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.513638,
+                            "lon": 13.392648
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q435399",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 75.51224782,
+                        "name": "Alte Bibliothek",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.516399,
+                            "lon": 13.3933
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N2607087946",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 1044.2766524,
+                        "name": "Kantine im Roten Rathaus",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.518829,
+                            "lon": 13.408701
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q2047280",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 248.81044499,
+                        "name": "Prince Henry Palace",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.518101,
+                            "lon": 13.3933
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q439297",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 139.78798858,
+                        "name": "Altes Palais",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.516899,
+                            "lon": 13.3928
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N262455591",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 174.29112727,
+                        "name": "Frederick II of Prussia",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.517254,
+                            "lon": 13.392743
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "W556435241",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 1175.99918983,
+                        "name": "Fernsehturm Berlin",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.520824,
+                            "lon": 13.409421
+                        },
+                        "rate": "7"
+                    }
+                ]
+            },
+            {
+                "day_index": 5,
+                "items": [
+                    {
+                        "item_id": "N4713534381",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 1180.0751524,
+                        "name": "Sphere Restaurant im Berliner Fernsehturm",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.520893,
+                            "lon": 13.409429
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "W15976892",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 98.49798559,
+                        "name": "Berlin State Opera",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.516705,
+                            "lon": 13.394738
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q125738",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 405.6233831,
+                        "name": "National Kaiser Wilhelm Monument",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.516399,
+                            "lon": 13.4
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "W24044937",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 232.36459023,
+                        "name": "Friedrichswerdersche Kirche",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.515884,
+                            "lon": 13.397501
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N411728139",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 1348.07718537,
+                        "name": "Zur Letzten Instanz",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.517452,
+                            "lon": 13.413775
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N3058015349",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 216.35585524,
+                        "name": "Hermann von Helmholtz",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.517849,
+                            "lon": 13.39373
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q2324837",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 264.68363178,
+                        "name": "State Library of Berlin (Haus Unter den Linden)",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.517799,
+                            "lon": 13.3917
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q1540327",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 173.33225454,
+                        "name": "Gouverneurshaus",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.516899,
+                            "lon": 13.3921
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N448814548",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 1491.50396046,
+                        "name": "Marinehaus",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.514076,
+                            "lon": 13.415841
                         },
                         "rate": "7"
                     }
@@ -258,78 +1046,17 @@
                 "day_index": 1,
                 "items": [
                     {
-                        "item_id": "380965",
-                        "item_type": "hotel",
-                        "type": 2,
-                        "distance": 0,
-                        "name": "Mandarin Oriental, Paris",
-                        "city": "paris",
-                        "coordinate": {
-                            "lat": 48.867158,
-                            "lon": 2.327068
-                        },
-                        "rate": "9.0"
-                    },
-                    {
-                        "item_id": "Q3146004",
-                        "item_type": "architecture",
-                        "type": 1,
-                        "distance": 92.47890225,
-                        "name": "h\u00f4tel de Villemar\u00e9",
-                        "city": "paris",
-                        "coordinate": {
-                            "lat": 48.867298,
-                            "lon": 2.32831
-                        },
-                        "rate": "7"
-                    },
-                    {
-                        "item_id": "W227762241",
-                        "item_type": "cultural",
-                        "type": 1,
-                        "distance": 177.37270156,
-                        "name": "Colonne Vend\u00f4me",
-                        "city": "paris",
-                        "coordinate": {
-                            "lat": 48.867474,
-                            "lon": 2.329438
-                        },
-                        "rate": "7"
-                    },
-                    {
-                        "item_id": "W32876070",
-                        "item_type": "shop",
-                        "type": 1,
-                        "distance": 452.72763322,
-                        "name": "Galerie de la Madeleine",
-                        "city": "paris",
-                        "coordinate": {
-                            "lat": 48.869812,
-                            "lon": 2.322388
-                        },
-                        "rate": "7"
-                    },
-                    {
-                        "item_id": "380965",
-                        "item_type": "hotel",
-                        "type": 2,
-                        "distance": 0,
-                        "name": "Mandarin Oriental, Paris",
-                        "city": "paris",
-                        "coordinate": {
-                            "lat": 48.867158,
-                            "lon": 2.327068
-                        },
-                        "rate": "9.0"
-                    }
-                ]
-            },
-            {
-                "day_index": 2,
-                "items": [
-                    {
                         "item_id": "247869",
-                        "item_type": "hotel",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 2,
                         "distance": 0,
                         "name": "Rocco Forte Hotel De Rome Berlin",
@@ -341,8 +1068,110 @@
                         "rate": "9.0"
                     },
                     {
+                        "item_id": "Q2324837",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 264.68363178,
+                        "name": "State Library of Berlin (Haus Unter den Linden)",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.517799,
+                            "lon": 13.3917
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q2047280",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 248.81044499,
+                        "name": "Prince Henry Palace",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.518101,
+                            "lon": 13.3933
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q1540327",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 173.33225454,
+                        "name": "Gouverneurshaus",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.516899,
+                            "lon": 13.3921
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q439297",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 139.78798858,
+                        "name": "Altes Palais",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.516899,
+                            "lon": 13.3928
+                        },
+                        "rate": "7"
+                    }
+                ]
+            },
+            {
+                "day_index": 2,
+                "items": [
+                    {
                         "item_id": "Q435399",
-                        "item_type": "architecture",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 1,
                         "distance": 75.51224782,
                         "name": "Alte Bibliothek",
@@ -354,8 +1183,105 @@
                         "rate": "7"
                     },
                     {
+                        "item_id": "N3058015348",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 218.46009969,
+                        "name": "Theodor Mommsen",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.517815,
+                            "lon": 13.393262
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N262455591",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 174.29112727,
+                        "name": "Frederick II of Prussia",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.517254,
+                            "lon": 13.392743
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N3058015349",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 216.35585524,
+                        "name": "Hermann von Helmholtz",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.517849,
+                            "lon": 13.39373
+                        },
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "N437319063",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 191.3880239,
+                        "name": "Wilhelm von Humboldt",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.517593,
+                            "lon": 13.393472
+                        },
+                        "rate": "7"
+                    },
+                    {
                         "item_id": "W205728152",
-                        "item_type": "cultural",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 1,
                         "distance": 65.92301116,
                         "name": "Bebelplatz",
@@ -367,30 +1293,48 @@
                         "rate": "7"
                     },
                     {
-                        "item_id": "Q1901032",
-                        "item_type": "shop",
+                        "item_id": "N3058015348",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 1,
-                        "distance": 799.71410207,
-                        "name": "Markthalle IV",
+                        "distance": 218.46009969,
+                        "name": "Theodor Mommsen",
                         "city": "berlin",
                         "coordinate": {
-                            "lat": 52.519199,
-                            "lon": 13.3836
+                            "lat": 52.517815,
+                            "lon": 13.393262
                         },
                         "rate": "7"
                     },
                     {
-                        "item_id": "247869",
-                        "item_type": "hotel",
-                        "type": 2,
-                        "distance": 0,
-                        "name": "Rocco Forte Hotel De Rome Berlin",
+                        "item_id": "N262455591",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 174.29112727,
+                        "name": "Frederick II of Prussia",
                         "city": "berlin",
                         "coordinate": {
-                            "lat": 52.515915,
-                            "lon": 13.394078
+                            "lat": 52.517254,
+                            "lon": 13.392743
                         },
-                        "rate": "9.0"
+                        "rate": "7"
                     }
                 ]
             },
@@ -398,69 +1342,141 @@
                 "day_index": 3,
                 "items": [
                     {
-                        "item_id": "360456",
-                        "item_type": "hotel",
-                        "type": 2,
-                        "distance": 0,
-                        "name": "St. Pancras Renaissance Hotel London",
-                        "city": "london",
-                        "coordinate": {
-                            "lat": 51.529412,
-                            "lon": -0.125847
-                        },
-                        "rate": "8.6"
-                    },
-                    {
-                        "item_id": "Q5025822",
-                        "item_type": "architecture",
+                        "item_id": "W15976892",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 1,
-                        "distance": 51.77868721,
-                        "name": "Camden Town Hall",
-                        "city": "london",
+                        "distance": 98.49798559,
+                        "name": "Berlin State Opera",
+                        "city": "berlin",
                         "coordinate": {
-                            "lat": 51.528999,
-                            "lon": -0.1255
+                            "lat": 52.516705,
+                            "lon": 13.394738
                         },
                         "rate": "7"
                     },
                     {
-                        "item_id": "Q4979489",
-                        "item_type": "shop",
+                        "item_id": "W24240381",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 1,
-                        "distance": 615.62265942,
-                        "name": "Brunswick Centre",
-                        "city": "london",
+                        "distance": 242.5321005,
+                        "name": "New Guard House",
+                        "city": "berlin",
                         "coordinate": {
-                            "lat": 51.523998,
-                            "lon": -0.124
+                            "lat": 52.517906,
+                            "lon": 13.395537
                         },
                         "rate": "7"
                     },
                     {
-                        "item_id": "N2617232245",
-                        "item_type": "cultural",
+                        "item_id": "Q530930",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
                         "type": 1,
-                        "distance": 159.74438573,
-                        "name": "British Library Exhibition Space",
-                        "city": "london",
+                        "distance": 239.05185196,
+                        "name": "Kronprinzenpalais",
+                        "city": "berlin",
                         "coordinate": {
-                            "lat": 51.529598,
-                            "lon": -0.128129
+                            "lat": 52.5172,
+                            "lon": 13.3969
                         },
                         "rate": "7"
                     },
                     {
-                        "item_id": "360456",
-                        "item_type": "hotel",
-                        "type": 2,
-                        "distance": 0,
-                        "name": "St. Pancras Renaissance Hotel London",
-                        "city": "london",
+                        "item_id": "Q2110747",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 175.65632056,
+                        "name": "Prinzessinnenpalais",
+                        "city": "berlin",
                         "coordinate": {
-                            "lat": 51.529412,
-                            "lon": -0.125847
+                            "lat": 52.516899,
+                            "lon": 13.3961
                         },
-                        "rate": "8.6"
+                        "rate": "7"
+                    },
+                    {
+                        "item_id": "Q806775",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 194.26754719,
+                        "name": "Mendelssohn Palace",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.5144,
+                            "lon": 13.3955
+                        },
+                        "rate": "7"
+                    }
+                ]
+            },
+            {
+                "day_index": 4,
+                "items": [
+                    {
+                        "item_id": "W24044937",
+                        "item_type": [
+                            "restaurants",
+                            "fast_food",
+                            "food",
+                            "shop",
+                            "natural",
+                            "sport",
+                            "cultural",
+                            "architecture"
+                        ],
+                        "type": 1,
+                        "distance": 232.36459023,
+                        "name": "Friedrichswerdersche Kirche",
+                        "city": "berlin",
+                        "coordinate": {
+                            "lat": 52.515884,
+                            "lon": 13.397501
+                        },
+                        "rate": "7"
                     }
                 ]
             }

@@ -1,8 +1,7 @@
-
 from search_engine.trip_planner.trip_classes.Day import Day
 from search_engine.trip_planner.trip_classes.Item import Item
 import pandas as pd
-from sklearn.cluster import KMeans,DBSCAN
+from sklearn.cluster import KMeans, DBSCAN
 from sklearn_extra.cluster import KMedoids
 import numpy as np
 import pickle
@@ -121,8 +120,8 @@ class ClusterPlanner:
             'type': [item.item_type for item in self.items]})
 
     def cluster_data(self):
-        self.clusterer = DBSCAN(eps=0.1,min_samples=self.n_poi,metric='haversine')
-        # self.clusterer = KMedoids(n_clusters=self.n_poi,metric='haversine')
+        # self.clusterer = DBSCAN(eps=0.1, min_samples=self.n_poi, metric='haversine')
+        self.clusterer = KMedoids(n_clusters=self.n_poi,metric='haversine')
         self.data['label'] = self.clusterer.fit_predict(self.data[['lat', 'lon']].values)
 
     # insert restaurant in the day at index
@@ -137,41 +136,24 @@ class ClusterPlanner:
 
     # plan every cluster in city then return the full plan
     def plan_days(self, i=0, days=[], pois=[]):
-        if len(pois) > self.n_poi:
-            days.append(Day(i, pois))
-            pois = []
+
         if i == self.n_clusters:
-            if pois:
-                days.append(Day(i, pois))
-            return days
+             return days
 
         places = self.data[self.data['label'] == i]
         p_items = [self.items[int(p['index'])] for l, p in places.iterrows()]
         # plan if items > 3
         if len(p_items) > 3:
             itinerary = plan_itinerary_LP(p_items)[:-1]
+            days.append(Day(i,itinerary))
 
-            if len(p_items) > self.n_poi:
-                day = Day(i, itinerary[:self.n_poi])
-                days.append(day)
-                day = Day(i, itinerary[self.n_poi:])
-                days.append(day)
-            else:
+        elif p_items:
+            days.append(Day(i, p_items))
 
-                day = Day(i, itinerary)
-                days.append(day)
-
-
-        else:
-            pois.extend(p_items)
-
-        # insert restaurants
-        # for j in range(0, len(day_places), 3):
-        #     self.insert_restaurant(day_places[j], j, day)
 
         for k in range(0, len(p_items)):
             if 'hotel' == p_items[k].item_type and k != 0:
-                day.swap_items(0, k)
+                days[i].swap_items(0, k)
 
         return self.plan_days(i + 1, days, pois)
 
@@ -187,12 +169,18 @@ def plan_itinerary_schedule_clusters(items: dict):
     clusterer = ClusterPlanner(pois, 5)
     clusterer.cluster_data()
     plan_days = clusterer.plan_days()
+    scheduled_days = []
+    # for day in plan_days:
+    # scheduled_days = [Day(l,day.tolist()) for l,day in enumerate(scheduled_days)]
+
     n_poi = []
     for d in plan_days:
         for p in d.items:
             n_poi.append(p)
+    scheduled_days.extend([Day(i, n_poi[i:i + 5]) for i in range(0, len(n_poi), 5)])
+    trip.add_bulk_days(scheduled_days)
+
     print('output len', len(n_poi))
-    trip.add_bulk_days(plan_days)
     ic('clusters', trip.days)
     plot_path(trip, 'map_clusters.html')
     return trip
@@ -204,4 +192,3 @@ if __name__ == '__main__':
 
     trip = plan_itinerary_schedule_clusters(m_trip)
     print(trip)
-

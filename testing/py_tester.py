@@ -12,10 +12,10 @@ Build Trips
 '''
 consts = {
 
-        'locations': ['berlin','paris'],  # 1
+        'locations': ['berlin','paris','istanbul'],  # 1
         'trip_mode': 'focused_trip',  # 2
-        'food_importance': 3,  # 3
-        'shop_importance': 1,  # 4
+        'food_importance': 2,  # 3
+        'shop_importance': 2,  # 4
         'days_count': 5,  # 5
         'places_per_day': 5,  # 6
         'shop_dis': False,  # 7
@@ -27,9 +27,9 @@ consts = {
 #     pickle.dump(trip,data)
 
 
-with open('samples/berlin_paris_trip_data.pkl', 'rb') as input:
+with open('samples/berlin_paris_istanbul_trip_data.pkl', 'rb') as input:
     l_trip = pickle.load(input)
-#     # trp = plan_itinerary_schedule(l_trip,places_per_day=5,food_count=3,is_shopping_last=False,shop_count=1,n_days=6)
+    # trp = plan_itinerary_schedule(l_trip,places_per_day=5,food_count=3,is_shopping_last=False,shop_count=1,n_days=6)
     trp1 = plan_itinerary_schedule_clusters(l_trip)
 
 

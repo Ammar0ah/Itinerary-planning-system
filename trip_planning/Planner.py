@@ -96,11 +96,9 @@ class Planner:
                     for j in range(i + 1, len(self.graph)):
                         if j - i == 1:
                             continue
-                        new_route = best_route[:]
-                        new_route[i:j] = best_route[j - 1:i - 1:-1]
-                        if self.cost(new_route) < self.cost(best_route):
+                        if self.delta(best_route[i - 1], best_route[i], best_route[j - 1], best_route[j]) < 0:
+                            best_route[i:j] = best_route[j - 1:i - 1:-1]
                             improved = True
-                            best_route = new_route
 
             self.path = [self.items[i] for i in best_route]
             self.optimal_cost = 0

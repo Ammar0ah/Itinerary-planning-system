@@ -12,7 +12,7 @@ Build Trips
 '''
 consts = {
 
-        'locations': ['berlin'],  # 1
+        'locations': ['berlin','paris'],  # 1
         'trip_mode': 'focused_trip',  # 2
         'food_importance': 3,  # 3
         'shop_importance': 1,  # 4
@@ -21,16 +21,16 @@ consts = {
         'shop_dis': False,  # 7
         'places_preferences':  {"HIS": 5, "CUL": 10, "SPO": 2, "ARC": 10}  # 8
     }
-trip = search_engine.plan_trip(constraints=consts)
+# trip = search_engine.plan_trip(constraints=consts)
 # print(trip)
-# with open('samples/london_trip_data.pkl','wb') as data:
-#     pickle.dump(trip,data,pickle.HIGHEST_PROTOCOL)
+# with open('samples/berlin_paris_trip_data.pkl','wb') as data:
+#     pickle.dump(trip,data)
 
 
-# with open('samples/london_trip_data.pkl', 'rb') as input:
-#     l_trip = pickle.load(input)
-#     trp = plan_itinerary_schedule(l_trip,places_per_day=5,food_count=3,is_shopping_last=False,shop_count=1,n_days=6)
-#     trp1 = plan_itinerary_schedule_clusters(l_trip)
+with open('samples/berlin_paris_trip_data.pkl', 'rb') as input:
+    l_trip = pickle.load(input)
+#     # trp = plan_itinerary_schedule(l_trip,places_per_day=5,food_count=3,is_shopping_last=False,shop_count=1,n_days=6)
+    trp1 = plan_itinerary_schedule_clusters(l_trip)
 
 
 

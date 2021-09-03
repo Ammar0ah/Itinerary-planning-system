@@ -124,8 +124,6 @@ class SearchEngine:
 
         trip_plan_clusters = plan_itinerary_schedule_clusters(data)
         jsn = {'trip1': trip_plan.toJSON(), 'trip2': trip_plan_clusters.toJSON()}
-        with open('trip.json', 'w') as f:
-            json.dump(jsn, f,indent=4)
         return jsn
 
     def plan_trip(self, constraints: dict):

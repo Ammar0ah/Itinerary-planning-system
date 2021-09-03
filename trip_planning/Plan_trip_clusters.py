@@ -15,7 +15,7 @@ import json
 
 from trip_planning.Plan_itinerary import plot_path, colors
 
-API_KEY = '5b3ce3597851110001cf624859a9e4cf86a3409abd7387ad2d5cac7a'
+API_KEY = '5b3ce3597851110001cf6248815abfd4d8834abbbbd9a2df9ed7a478'
 url = 'https://api.openrouteservice.org/v2/matrix/driving-car'
 
 from haversine import haversine

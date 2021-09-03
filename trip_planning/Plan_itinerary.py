@@ -62,14 +62,14 @@ def plan_itinerary_schedule(items_dict: dict, places_per_day, food_count, is_sho
     trip = Trip(days=[])
     print('sum of data',sum([len(x) for x in items_dict.values()]))
 
-    if places_per_day > food_count:
-        for value in items_dict.values():
-            planner = Planner(value, shopping_last=is_shopping_last)
-            optimal_route, optimal_cost, path = planner.plan_two_opt(iterations=5)
-            full_plan_city = planner.plan_itinerary(places_per_day, food_count,shop_count,n_days=n_days)
-            trip.add_bulk_days(full_plan_city)
-    else:
-        raise ValueError('Need Poi to be more than Food')
+    # if places_per_day > food_count:
+    for value in items_dict.values():
+        planner = Planner(value, shopping_last=is_shopping_last)
+        optimal_route, optimal_cost, path = planner.plan_two_opt(iterations=5)
+        full_plan_city = planner.plan_itinerary(places_per_day, food_count,shop_count,n_days=n_days)
+        trip.add_bulk_days(full_plan_city)
+    # else:
+    #     raise ValueError('Need Poi to be more than Food')
     ic(trip.days)
     plot_path(trip,'map.html')
 
